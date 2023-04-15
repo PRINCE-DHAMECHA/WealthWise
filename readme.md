@@ -1,4 +1,40 @@
 
 # SmartStocks
-#### Smart Stocks offers a virtual space where users may practise trading in the stock market as well as a loan system so that users can comprehend a fundamental loan system. Users may access current pricing, price trends, and suggestions on the platform, which also offers a calculator for a sample and advice on how to find their ideal vehicle.
+
+### Problem It Solves
+Problem it solves: The problem this project solves is the lack of experience and confidence that new investors face when trying to invest in the stock market. By providing a simulated trading environment with dummy stocks, new investors can practice trading without risking real money. This will give them the opportunity to learn about the stock market and develop trading strategies without the fear of losing their hard-earned money. Additionally, providing information about real stocks will help new investors make informed decisions when they eventually transition to trading with real money. Ultimately, this project aims to help new investors gain confidence and experience in the stock market, reducing the barrier to entry and promoting financial literacy.
+
+
+### Project Description
+SmartStocks is a platform designed to help new investors gain confidence and experience in the stock market. It provides a simulated trading environment where users can practice trading with dummy stocks, without the risk of losing real money. In addition, the platform offers a loan system to help users understand how loans work and how to manage them effectively.
+
+One of the key features of SmartStocks is the real-time stock data it provides. Users can view current prices, price charts, and recommendations to help them make informed decisions about their investments. This data is updated in real-time, allowing users to stay up-to-date with market trends and make timely decisions.
+
+In addition to stock market data, SmartStocks also provides a calculator for a SIP (Systematic Investment Plan) along with recommendations to buy their dream car. This feature helps users plan for their financial goals and make informed decisions about their investments.
+
+Overall, SmartStocks aims to reduce the barrier to entry for new investors and promote financial literacy. By providing a simulated trading environment, real-time stock data, and loan system, users can gain experience and confidence in the stock market, and learn about effective financial management.
+
+### Technologies Used
+- Frontend :
+  - React.JS
+- Backend
+  - Express.JS
+  - Node.JS
+- Database
+  - MongoDB
+
+### Tools and Platforms
+- Tailwind CSS
+- Syncfusion
+- MongoDB Atlas
+- Postman
+- Visual Studio Code
+
+### Created By:-
+1) [Prince Dhamecha](https://github.com/PRINCE-DHAMECHA)
+2) [Aneri Sonani](https://github.com/AneriSonani09)
+3) [Dhruvi Sherathiya](https://github.com/DhruviSherathiya)
+
+
+
 
