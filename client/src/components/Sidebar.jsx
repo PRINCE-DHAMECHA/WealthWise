@@ -22,8 +22,8 @@ const Sidebar = () => {
     <div className="dark:bg-secondary-dark-bg p-2 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
-            <div className="h-2/3 w-2/3">
+          <div className="flex mt-4 justify-between items-center">
+            <div className="h-2/3 w-2/3 -ml-8">
               <Link to="/landing">
                 <img
                   className="mx-auto h-auto w-auto"
@@ -41,7 +41,7 @@ const Sidebar = () => {
               <RiCloseFill size={"25px"}></RiCloseFill>
             </button>
           </div>
-          <div className="mt-10">
+          <div className="mt-2">
             {links.map((item) => (
               <div key={item.title}>
                 <p className="text-gray-400 m-3 mt-4 uppercase">{item.title}</p>

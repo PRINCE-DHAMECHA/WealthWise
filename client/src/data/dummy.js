@@ -165,53 +165,53 @@ export const quotes = [
 
 export const MarketViewData = [
   {
-    stockName: "Prince Airlines",
+    stockName: "Prince Cinemas",
     key: 1,
-    sector: "transport",
-  },
-  {
-    stockName: "Krishna Zoo",
-    key: 2,
     sector: "Entertainment",
   },
   {
-    stockName: "Kanan Ielts",
+    stockName: "Dhruvi StudyNotes",
+    key: 2,
+    sector: "Education",
+  },
+  {
+    stockName: "Aneri Content",
     key: 3,
+    sector: "Marketing",
+  },
+  {
+    stockName: "Krishna Zoo",
+    key: 4,
+    sector: "Wildlife",
+  },
+  {
+    stockName: "Kanan Ielts",
+    key: 5,
     sector: "Education",
   },
   {
     stockName: "Adarsh Gaming",
-    key: 4,
-    sector: "Entertainment",
+    key: 6,
+    sector: "Gaming",
   },
   {
     stockName: "Namra Pharma",
-    key: 5,
+    key: 7,
     sector: "pharmaceutical",
   },
   {
     stockName: "Aditya Studio",
-    key: 6,
+    key: 8,
     sector: "Art",
   },
   {
     stockName: "Parshwa Electrics",
-    key: 7,
+    key: 9,
     sector: "Energy",
   },
   {
     stockName: "Darshana Music",
-    key: 8,
-    sector: "Entertainment",
-  },
-  {
-    stockName: "Khushali Ice-Cream",
-    key: 9,
-    sector: "FMCG",
-  },
-  {
-    stockName: "Honey Dresses",
     key: 10,
-    sector: "Art",
+    sector: "Talent",
   },
 ];

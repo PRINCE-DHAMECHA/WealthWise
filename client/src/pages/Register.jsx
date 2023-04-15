@@ -77,14 +77,14 @@ export default function Register() {
         </div>
       ) : (
         <div className="flex justify-center flex-wrap text-center">
-          <Link to="/landing">
+          <Link className="w-full" to="/landing">
             <img
               src={currentMode === "Dark" ? logoDark : logoLight}
               alt="Logo"
-              className="m-auto mt-5 w-2/3 md:w-3/12 h-auto"
+              className="m-auto mt-3 w-2/3 md:w-3/12 h-auto"
             ></img>
           </Link>
-          <div className="max-w-sm w-full space-y-8">
+          <div className="max-w-sm w-full space-y-6">
             <div>
               <h2
                 style={{
@@ -92,7 +92,7 @@ export default function Register() {
                   borderBottom: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="mt-8 p-1 py-2 text-center text-2xl font-medium dark:text-white text-gray-900"
+                className="mt-3 p-1 py-2 text-center text-2xl font-medium dark:text-white text-gray-900"
               >
                 {state.isMember
                   ? " Sign In To Your Account  "
