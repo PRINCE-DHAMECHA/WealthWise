@@ -61,7 +61,7 @@ const AppProvider = ({ children }) => {
   };
 
   const authFetch = axios.create({
-    baseURL: "https://stock-prince.onrender.com",
+    baseURL: "https://smart-stocks.onrender.com",
   });
 
   authFetch.interceptors.request.use(
