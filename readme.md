@@ -9,7 +9,7 @@ SmartStocks is a platform designed to help new investors gain confidence and exp
 
 One of the key features of SmartStocks is the real-time stock data it provides. Users can view current prices, price charts, and recommendations to help them make informed decisions about their investments. This data is updated in real-time, allowing users to stay up-to-date with market trends and make timely decisions.
 
-In addition to stock market data, SmartStocks also provides a calculator for a SIP (Systematic Investment Plan) along with recommendations to buy their dream car. This feature helps users plan for their financial goals and make informed decisions about their investments.
+In addition to stock market data, SmartStocks also provides recommendations to buy their dream car. This feature helps users plan for their financial goals and make informed decisions about their investments.
 
 Overall, SmartStocks aims to reduce the barrier to entry for new investors and promote financial literacy. By providing a simulated trading environment, real-time stock data, and loan system, users can gain experience and confidence in the stock market, and learn about effective financial management.
 
