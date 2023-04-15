@@ -58,7 +58,7 @@ Overall, SmartStocks aims to reduce the barrier to entry for new investors and p
     
 4. You are ready to run your project.
 
-#### Visit live project Here : http://smart-stocks.netlify.app
+#### Visit live project Here : https://smart-stocks.netlify.app
 
 ### Created By:-
 1) [Prince Dhamecha](https://github.com/PRINCE-DHAMECHA)
