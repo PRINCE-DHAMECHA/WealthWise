@@ -1,4 +1,3 @@
-
 # SmartStocks
 
 ### Problem It Solves
@@ -29,6 +28,33 @@ Overall, SmartStocks aims to reduce the barrier to entry for new investors and p
 - MongoDB Atlas
 - Postman
 - Visual Studio Code
+
+### Installation Steps
+1. Clone the repository using below command :
+ 
+   `git clone `
+2. Server setup :
+   
+   Open a terminal and run below commands 
+
+   `cd server`
+   
+   `npm install`
+   
+   Make your own .env file and define MongoDB URI, JWT token and lifetime using MONGO_URI, JWT_SECRET, JWT_LIFETIME. 
+   
+   `npm start`
+3. Client setup: 
+
+    Open another terminal and run below commands 
+    
+    `cd client`
+    
+    `npm install`
+    
+    `npm start`
+    
+4. You are ready to run your project.
 
 ### Created By:-
 1) [Prince Dhamecha](https://github.com/PRINCE-DHAMECHA)
