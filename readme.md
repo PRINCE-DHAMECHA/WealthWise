@@ -1,5 +1,7 @@
 # SmartStocks
 
+![Banner](https://github.com/PRINCE-DHAMECHA/SmartStocks/blob/main/Banner.png)
+
 ### Problem It Solves
 Problem it solves: The problem this project solves is the lack of experience and confidence that new investors face when trying to invest in the stock market. By providing a simulated trading environment with dummy stocks, new investors can practice trading without risking real money. This will give them the opportunity to learn about the stock market and develop trading strategies without the fear of losing their hard-earned money. Additionally, providing information about real stocks will help new investors make informed decisions when they eventually transition to trading with real money. Ultimately, this project aims to help new investors gain confidence and experience in the stock market, reducing the barrier to entry and promoting financial literacy.
 
@@ -55,6 +57,8 @@ Overall, SmartStocks aims to reduce the barrier to entry for new investors and p
     `npm start`
     
 4. You are ready to run your project.
+
+#### Visit live project Here : https://smart-stocks.netlify.app
 
 ### Created By:-
 1) [Prince Dhamecha](https://github.com/PRINCE-DHAMECHA)
