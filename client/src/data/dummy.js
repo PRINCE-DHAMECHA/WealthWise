@@ -5,6 +5,7 @@ import {
   AiOutlineAreaChart,
   AiFillBank,
 } from "react-icons/ai";
+import { BsFillCalculatorFill } from 'react-icons/bs';
 import { FiEdit } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { TbNotes } from "react-icons/tb";
@@ -33,6 +34,11 @@ export const links = [
         name: "Buy A Car",
         to: "buyCar",
         icon: <FaCar />,
+      },
+      {
+        name: "Loan Calculator",
+        to: "loanCalc",
+        icon: <BsFillCalculatorFill />,
       },
     ],
   },

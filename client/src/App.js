@@ -17,6 +17,7 @@ import Accounts from "./pages/Accounts";
 import Tips from "./pages/Tips";
 import Validator from "./pages/Validator";
 import BuyCar from "./pages/BuyCar";
+import LoanCalc from "./pages/LoanCalc";
 
 function App() {
   const { currentMode } = useAppContext();
@@ -31,6 +32,7 @@ function App() {
             <Route path="/ThemePicker" element={<ColorPicker />}></Route>
             <Route path="/stockHome" element={<Stocks />}></Route>
             <Route path="/buyCar" element={<BuyCar />}></Route>
+            <Route path="/loanCalc" element={<LoanCalc />}></Route>
             <Route
               path="/stockDetails/:name/:sym"
               element={<StockDetails />}
