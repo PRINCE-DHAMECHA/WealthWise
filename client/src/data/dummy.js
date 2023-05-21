@@ -10,6 +10,8 @@ import { FiEdit } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { TbNotes } from "react-icons/tb";
 import { FaCar, FaGratipay } from "react-icons/fa";
+import {IoIosTrendingUp} from "react-icons/io";
+import {GiReceiveMoney} from "react-icons/gi";
 
 export const links = [
   {
@@ -39,6 +41,11 @@ export const links = [
         name: "Loan Calculator",
         to: "loanCalc",
         icon: <BsFillCalculatorFill />,
+      },
+      {
+        name: "SIP",
+        to: "sip",
+        icon: <IoIosTrendingUp />,
       },
     ],
   },
@@ -76,9 +83,10 @@ export const links = [
     title: "Loans",
     links: [
       {
-        name: "Desk",
+        name: "Loan Desk",
         to: "loanDesk",
-        icon: <TbNotes />,
+        icon: < GiReceiveMoney />,
+        // <TbNotes />,
       },
       {
         name: "Loans",

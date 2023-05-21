@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import RingLoader from "react-spinners/RingLoader";
 import { Header } from "../components";
 import { useAppContext } from "../context/appContext";
-import { useParams } from "react-router-dom";
 import { TiExportOutline } from "react-icons/ti";
 import {
   ChartComponent,
@@ -20,7 +19,6 @@ import {
 } from "@syncfusion/ej2-react-charts";
 
 const LoanCalc = () => {
-  const params = useParams();
   const { currentColor, currentMode } = useAppContext();
   const [loading, setLoading] = useState(true);
   const [amount, setAmount] = useState(150000);
@@ -36,6 +34,8 @@ const LoanCalc = () => {
     x: index + 1,
     principalPaid: entry.principalPaid,
     interestPaid: entry.interestPaid,
+    principalAxisColor : '#7031AC',
+    interestAxisColor : '#C94D6D',
   }));
 
   useEffect(() => {
@@ -46,7 +46,7 @@ const LoanCalc = () => {
   const handleChange = () => {
     setLoading(true);
     const r = rate / (12 * 100);
-    const n = (loanTermUnit == 'years') ? loanTerm * 12 : loanTerm;
+    const n = (loanTermUnit === 'years') ? loanTerm * 12 : loanTerm;
     const numerator = amount * r * Math.pow(1 + r, n);
     const denominator = Math.pow(1 + r, n) - 1;
     const emiValue = numerator / denominator;
@@ -62,7 +62,7 @@ const LoanCalc = () => {
       const principalPayment = emiValue - interestPayment;
       principalPaymentYearly += principalPayment;
       const monthEndBalance = remainingPrincipal - principalPayment;
-      if (i % 12 == 0 || i == n) {
+      if (i % 12 === 0 || i === n) {
         yearReport.push({
           year: j,
           principalPaid: principalPaymentYearly.toFixed(2),
@@ -245,9 +245,13 @@ const LoanCalc = () => {
                     yName="principalPaid"
                     width={2}
                     name="Principal Paid"
-                    marker={{ visible: true, width: 8, height: 8 }}
+                    marker={{
+                      visible: true,
+                      height: 5,
+                      width: 5,
+                    }}
                     type="MultiColoredLine"
-                    pointColorMapping="color"
+                    pointColorMapping="principalAxisColor"
                   />
                   <SeriesDirective
                     dataSource={chartData}
@@ -255,9 +259,13 @@ const LoanCalc = () => {
                     yName="interestPaid"
                     width={2}
                     name="Interest Paid"
-                    marker={{ visible: true, width: 8, height: 8 }}
+                    marker={{
+                      visible: true,
+                      height: 5,
+                      width: 5,
+                    }}
                     type="MultiColoredLine"
-                    pointColorMapping="color"
+                    pointColorMapping="interestAxisColor"
                   />
                 </SeriesCollectionDirective>
               </ChartComponent>
@@ -313,14 +321,14 @@ const LoanCalc = () => {
               <table style={{ overflow: 'scroll' }}>
                 <thead>
                   <tr>
-                    <th>{(viewOption == 'yearly') ? "Year" : "Month" }</th>
+                    <th>{(viewOption === 'yearly') ? "Year" : "Month" }</th>
                     <th>Principal Paid</th>
                     <th>Interest Paid</th>
-                    <th>{(viewOption == 'yearly') ? "Year-End Loan" : "Month-End Loan" }</th>
+                    <th>{(viewOption === 'yearly') ? "Year-End Loan" : "Month-End Loan" }</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {(viewOption == 'yearly') ? yearlyReport.map((data) => (
+                  {(viewOption === 'yearly') ? yearlyReport.map((data) => (
                     <tr key={data.year}>
                       <td>{data.year}</td>
                       <td>{data.principalPaid}</td>

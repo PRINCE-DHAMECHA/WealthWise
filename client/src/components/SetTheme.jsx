@@ -1,26 +1,28 @@
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import React from "react";
-import { FiSettings } from "react-icons/fi";
+import { IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 import { useAppContext } from "../context/appContext";
-import ThemeSettings from "./ThemeSettings";
 
 const SetTheme = () => {
-  const { themeSettings, setThemeSettings, currentColor } = useAppContext();
+  const { currentMode, setMode, currentColor } = useAppContext();
+
   return (
     <>
       <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-        <TooltipComponent content="Settings" position="Top">
+        <TooltipComponent content="Switch Mode" position="Top">
+          {/* onClick={() => setThemeSettings(true)} */}
           <button
             type="button"
             className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-            onClick={() => setThemeSettings(true)}
+            onClick={setMode}
             style={{ background: currentColor, borderRadius: "50%" }}
           >
-            <FiSettings></FiSettings>
+            {(currentMode === "Dark")
+             ? (<IoSunnyOutline value="Light" />) : (<IoMoonOutline value="Dark" />)}
           </button>
         </TooltipComponent>
       </div>
-      {themeSettings && <ThemeSettings />}
+      {/* {themeSettings && <ThemeSettings />} */}
     </>
   );
 };

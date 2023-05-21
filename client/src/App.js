@@ -18,7 +18,7 @@ import Tips from "./pages/Tips";
 import Validator from "./pages/Validator";
 import BuyCar from "./pages/BuyCar";
 import LoanCalc from "./pages/LoanCalc";
-
+import SIP from "./pages/SIP";
 function App() {
   const { currentMode } = useAppContext();
   return (
@@ -33,6 +33,7 @@ function App() {
             <Route path="/stockHome" element={<Stocks />}></Route>
             <Route path="/buyCar" element={<BuyCar />}></Route>
             <Route path="/loanCalc" element={<LoanCalc />}></Route>
+            <Route path="/sip" element={<SIP />}></Route>
             <Route
               path="/stockDetails/:name/:sym"
               element={<StockDetails />}
