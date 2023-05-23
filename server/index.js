@@ -16,6 +16,7 @@ import shareRouter from "./routes/shareRoutes.js";
 import loanRouter from "./routes/loanRouter.js";
 import stockRouter from "./routes/stockRoute.js";
 import transactionRouter from "./routes/transactionRoute.js";
+import stockWatchRouter from "./routes/stockWatch.js";
 
 import notFoundMiddleware from "./middlewares/not-found.js";
 import errorHandlerMiddleware from "./middlewares/error-handler.js";
@@ -29,6 +30,7 @@ app.use("/share", authenticateUser, shareRouter);
 app.use("/loan", authenticateUser, loanRouter);
 app.use("/account", authenticateUser, transactionRouter);
 app.use("/stock", stockRouter);
+app.use("/stockWatch", authenticateUser, stockWatchRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

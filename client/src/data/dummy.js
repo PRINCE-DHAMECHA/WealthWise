@@ -4,14 +4,15 @@ import {
   AiFillHome,
   AiOutlineAreaChart,
   AiFillBank,
+  AiOutlineEye,
 } from "react-icons/ai";
-import { BsFillCalculatorFill } from 'react-icons/bs';
+import { BsFillCalculatorFill } from "react-icons/bs";
 import { FiEdit } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { TbNotes } from "react-icons/tb";
 import { FaCar, FaGratipay } from "react-icons/fa";
-import {IoIosTrendingUp} from "react-icons/io";
-import {GiReceiveMoney} from "react-icons/gi";
+import { IoIosTrendingUp } from "react-icons/io";
+import { GiReceiveMoney } from "react-icons/gi";
 
 export const links = [
   {
@@ -27,25 +28,20 @@ export const links = [
         to: "ThemePicker",
         icon: <FiEdit />,
       },
+    ],
+  },
+  {
+    title: "Stocks",
+    links: [
       {
         name: "Stocks",
         to: "stockHome",
         icon: <AiOutlineAreaChart />,
       },
       {
-        name: "Buy A Car",
-        to: "buyCar",
-        icon: <FaCar />,
-      },
-      {
-        name: "Loan Calculator",
-        to: "loanCalc",
-        icon: <BsFillCalculatorFill />,
-      },
-      {
-        name: "SIP",
-        to: "sip",
-        icon: <IoIosTrendingUp />,
+        name: "My Watchlist",
+        to: "watchlist",
+        icon: <AiOutlineEye />,
       },
     ],
   },
@@ -85,13 +81,33 @@ export const links = [
       {
         name: "Loan Desk",
         to: "loanDesk",
-        icon: < GiReceiveMoney />,
+        icon: <GiReceiveMoney />,
         // <TbNotes />,
       },
       {
         name: "Loans",
         to: "notes",
         icon: <AiFillBank />,
+      },
+    ],
+  },
+  {
+    title: "Calculators",
+    links: [
+      {
+        name: "Buy A Car",
+        to: "buyCar",
+        icon: <FaCar />,
+      },
+      {
+        name: "Loan Calculator",
+        to: "loanCalc",
+        icon: <BsFillCalculatorFill />,
+      },
+      {
+        name: "SIP",
+        to: "sip",
+        icon: <IoIosTrendingUp />,
       },
     ],
   },

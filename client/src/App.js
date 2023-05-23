@@ -19,6 +19,7 @@ import Validator from "./pages/Validator";
 import BuyCar from "./pages/BuyCar";
 import LoanCalc from "./pages/LoanCalc";
 import SIP from "./pages/SIP";
+import Watchlist from "./pages/Watchlist";
 function App() {
   const { currentMode } = useAppContext();
   return (
@@ -48,6 +49,7 @@ function App() {
             }
           >
             <Route element={<Portfolio />}></Route>
+            <Route path="watchlist" element={<Watchlist />}></Route>
             <Route path="marketView" element={<MarketView />}></Route>
             <Route
               path="buyStock/:stockName/:id"

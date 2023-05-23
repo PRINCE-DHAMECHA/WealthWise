@@ -42,9 +42,9 @@ const AppProvider = ({ children }) => {
   const [activeStockName, setactiveStockName] = useState(null);
   const [activeLoan, setActiveLoan] = useState(null);
   const setMode = () => {
-    const newMode = currentMode === 'Light' ? 'Dark' : 'Light';
+    const newMode = currentMode === "Light" ? "Dark" : "Light";
     setCurrentMode(newMode);
-    localStorage.setItem("themeMode",newMode);
+    localStorage.setItem("themeMode", newMode);
     setThemeSettings(false);
   };
   const setLoan = (data, outstanding, date) => {
