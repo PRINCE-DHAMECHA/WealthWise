@@ -27,7 +27,7 @@ input::-webkit-inner-spin-button {
 }
 
 .scrollClass::-webkit-scrollbar-thumb {
-  background-color: #3770ff;
+  background-color: #ffffff;
 }
 
 @tailwind base;
