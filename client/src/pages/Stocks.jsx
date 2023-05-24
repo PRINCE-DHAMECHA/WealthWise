@@ -27,7 +27,8 @@ const Stocks = () => {
                   />
                   <div
                     onClick={() => setIsIndian((prev) => !prev)}
-                    className="flex justify-around m-auto w-[102px] h-10 bg-red-500 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-9 after:w-12 after:transition-all peer-checked:bg-orange-600 text-white"
+                    style={{backgroundColor: currentColor}}
+                    className="flex justify-around m-auto w-[102px] h-10 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-9 after:w-12 after:transition-all text-white"
                   >
                     <p className="m-auto">India</p>
                     <p className="m-auto">USA</p>
@@ -134,6 +135,15 @@ const Stocks = () => {
           </div>
         )}
       </div>
+      <div 
+      style={{
+        backgroundColor: currentColor,
+        position: "absolute",
+      }}
+      className="w-3/4 bottom-4 text-white py-3 px-4 flex items-center space-x-4 overflow-hidden">
+      <span className="font-bold">News:</span>
+      <marquee className="flex-grow">Stock Latest News</marquee>
+    </div>
     </div>
   );
 };
