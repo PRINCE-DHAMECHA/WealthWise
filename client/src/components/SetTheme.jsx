@@ -11,7 +11,7 @@ const SetTheme = () => {
       <div style={{ zIndex: "1000" }}>
         <button
           type="button"
-          className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+          className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
           onClick={setMode}
           style={{ background: currentColor, borderRadius: "50%" }}
         >

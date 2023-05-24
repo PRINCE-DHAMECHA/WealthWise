@@ -11,14 +11,14 @@ const Info = () => {
 
   return (
     <>
-      <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
+      <div className="fixed right-4 bottom-[2px]" style={{ zIndex: "100000" }}>
         <button
           type="button"
-          className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+          className="text-xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white bg-white"
           onClick={() => setDis((prev) => !prev)}
-          style={{ background: currentColor, borderRadius: "50%" }}
+          style={{ background: "white", borderRadius: "50%" }}
         >
-          <HiOutlineLightBulb />
+          <HiOutlineLightBulb color={currentColor} />
         </button>
       </div>
       {dis && <InfoCard />}

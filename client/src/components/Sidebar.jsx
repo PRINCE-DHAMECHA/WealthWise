@@ -22,7 +22,7 @@ const Sidebar = () => {
     <div className="dark:bg-secondary-dark-bg p-2 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto">
       {activeMenu && (
         <>
-          <div className="flex mt-4 justify-between items-center">
+          <div className="flex mt-4 justify-between items-center z-50">
             <div className="h-2/3 w-2/3 -ml-8">
               <Link to="/landing">
                 <img

@@ -12,7 +12,9 @@
     z-index: 10000000;
   }
 }
-
+.sidebar {
+  z-index: 10005;
+}
 .fade-in {
   transition: opacity 3s ease;
 }
