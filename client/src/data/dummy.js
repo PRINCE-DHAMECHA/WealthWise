@@ -245,3 +245,12 @@ export const MarketViewData = [
     sector: "Talent",
   },
 ];
+
+export const InformationData = [
+  {
+    routeName: "SIPCalculator",
+    details : "A SIP calculator is a simple tool that allows individuals to get an idea of the returns on their mutual fund investments made through SIP. SIP investments in mutual funds have become one of the most popular investment options for millennials lately."
+  },
+  
+];
+
