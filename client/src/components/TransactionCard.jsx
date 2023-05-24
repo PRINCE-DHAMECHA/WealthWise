@@ -54,7 +54,7 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
 
               <p>Pricipal: {item.principal} &#8377;</p>
               <p>Interest: {item.interest}%</p>
-              <p>Tax: {item.isRepay ? "0" : item.tax} &#8377;</p>
+              <p>Tax: {item.isRepay ? "0" : item.tax.toFixed(2)} &#8377;</p>
             </div>
             <div className="flex flex-col justify-center text-right">
               {item.receiver === userName ? (
@@ -64,14 +64,15 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
               )}
               {item.isRepay ? (
                 <p>
-                  {item.receiver === userName ? "+" : "-"} {item.amount} &#8377;
+                  {item.receiver === userName ? "+" : "-"}{" "}
+                  {item.amount.toFixed(2)} &#8377;
                 </p>
               ) : (
                 <p>
                   {item.receiver === userName ? "+" : "-"}{" "}
                   {item.receiver === userName
-                    ? Number(item.amount) - Number(item.tax)
-                    : Number(item.amount) + Number(item.tax)}{" "}
+                    ? (Number(item.amount) - Number(item.tax)).toFixed(2)
+                    : (Number(item.amount) + Number(item.tax)).toFixed(2)}{" "}
                   &#8377;
                 </p>
               )}

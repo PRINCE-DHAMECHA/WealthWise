@@ -214,7 +214,7 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     borderLeft: `3px solid ${currentColor}`,
                     borderRadius: "10px",
                   }}
-                  className="xl:w-7/12 w-full text-left flex flex-col justify-center xl:p-10 p-2 gap-4 dark:text-white tracking-wide shadow-xl"
+                  className="xl:w-7/12 w-full text-left flex flex-col justify-center xl:p-10 p-2 gap-4 dark:text-white tracking-wide shadow-md dark:shadow-gray-600"
                 >
                   <div className="flex flex-col gap-2 justify-start items-left text-left xl:text-xl text-lg">
                     <p
@@ -311,7 +311,7 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     borderLeft: `3px solid ${currentColor}`,
                     borderRadius: "10px",
                   }}
-                  className="xl:w-5/12 w-full xl:text-right text-left flex flex-col justify-center xl:p-10 p-2 dark:text-white tracking-wide m-auto shadow-xl"
+                  className="xl:w-5/12 w-full xl:text-right text-left flex flex-col justify-center xl:p-10 p-2 dark:text-white tracking-wide m-auto shadow-md dark:shadow-gray-600"
                 >
                   <div className="flex flex-col">
                     {loading1 && (
@@ -366,8 +366,14 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                 </div>
               </div>
               {isActive && (
-                <div className="text-center w-full mt-2 flex flex-wrap flex-col xl:flex-row justify-center gap-2">
-                  <div className="w-11/12 dark:text-white mt-10 block  rounded-xl text-left m-auto">
+                <div
+                  style={{
+                    borderLeft: `3px solid ${currentColor}`,
+                    borderRadius: "10px",
+                  }}
+                  className="text-center w-full mt-2 flex flex-wrap flex-col xl:flex-row justify-center gap-2 shadow-md dark:shadow-gray-600 p-2 pb-10 xl:p-10"
+                >
+                  <div className="w-11/12 dark:text-white mt-5 block  rounded-xl text-left m-auto">
                     <p className="m-auto md:text-2xl text-lg text-center">
                       {`  ${activeStockName} (${("0" + d1.getDate()).slice(
                         -2

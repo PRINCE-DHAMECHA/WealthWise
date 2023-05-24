@@ -18,14 +18,13 @@ const Tips = () => {
     try {
       await authFetch("account/pay");
       setIsTipBought(true);
-      setLoading(false);
       setMyText("Buy Again");
     } catch (e) {
       setMyText("Error");
-      setLoading(false);
       console.log(e);
     }
     setisRefetch((prev) => !prev);
+    setLoading(false);
   };
   useEffect(() => {
     setLoading(true);
@@ -33,12 +32,12 @@ const Tips = () => {
       try {
         const data = await authFetch("share/getUser");
         setCurrentBalance(data.data[0].balance);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
     fetchDetails();
-    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isRefetch]);
   useEffect(() => {

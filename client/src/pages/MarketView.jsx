@@ -43,7 +43,7 @@ const MarketView = () => {
           to="/portfolio"
           className={`text-xl text-white px-6 py-2 hover:drop-shadow-xl `}
         >
-          Trade
+          Portfolio
         </NavLink>
         <NavLink
           style={{

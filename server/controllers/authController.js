@@ -5,14 +5,18 @@ import { BadRequestError, UnAuthenticatedError } from "../errors/index.js";
 const register = async (req, res) => {
   const { name, email, password } = req.body;
 
-  if (!name || !email || !password) {
-    throw new BadRequestError("please provide all values");
-  }
-  const userAlreadyExists = await User.findOne({ email });
-  if (userAlreadyExists) {
-    throw new BadRequestError("Email already in use");
-  }
   try {
+    if (!name || !email || !password) {
+      throw new BadRequestError("please provide all values");
+    }
+    const userAlreadyExists = await User.findOne({ email });
+    if (userAlreadyExists) {
+      throw new BadRequestError("Email already in use");
+    }
+    const userAlreadyExists2 = await User.findOne({ name });
+    if (userAlreadyExists2) {
+      throw new BadRequestError("Name already in use");
+    }
     const user = await User.create({ name, email, password });
     const token = user.createJWT();
     res.status(StatusCodes.CREATED).json({
@@ -30,7 +34,7 @@ const login = async (req, res) => {
   }
   const user = await User.findOne({ email }).select("+password");
   if (!user) {
-    throw new UnAuthenticatedError("Invalid Credentials");
+    throw new UnAuthenticatedError("Email Does Not Exist");
   }
 
   const isPasswordCorrect = await user.comparePassword(password);

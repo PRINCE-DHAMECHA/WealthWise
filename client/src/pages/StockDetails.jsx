@@ -35,10 +35,11 @@ const StockDetails = () => {
   const [lineChartCurrent, setLineChartCurrent] = useState([]);
   const [currentButton, setCurrentButton] = useState(0);
   const [myIntervalState, setmyIntervalState] = useState(0);
-  const { currentColor, authFetch, currentMode } = useAppContext();
   const [watch, setWatch] = useState({});
   const [isWatch, setIsWatch] = useState(false);
   const [isWatchLoading, setIsWatchLoading] = useState(false);
+  const { currentColor, authFetch, currentMode, user } = useAppContext();
+  console.log(user);
   useEffect(() => {
     const fetchDetails = async () => {
       await authFetch
@@ -67,19 +68,21 @@ const StockDetails = () => {
         .catch((error) => {
           console.log(error);
         });
-      await authFetch
-        .get(`stockWatch/getOne/${params.sym}`)
-        .then((d) => {
-          if (d.data.success) {
-            setIsWatch(true);
-            setWatch(d.data.watch);
-          } else {
-            setIsWatch(false);
-          }
-        })
-        .catch((e) => {
-          console.log(e);
-        });
+      if (user !== null) {
+        await authFetch
+          .get(`stockWatch/getOne/${params.sym}`)
+          .then((d) => {
+            if (d.data.success) {
+              setIsWatch(true);
+              setWatch(d.data.watch);
+            } else {
+              setIsWatch(false);
+            }
+          })
+          .catch((e) => {
+            console.log(e);
+          });
+      }
       setLoading(false);
     };
     fetchDetails();
@@ -279,22 +282,30 @@ const StockDetails = () => {
           </p>
         </div>
         {!loading && (
-          <div className="absolute top-0 right-0 lg:m-2 m-2">
-            {isWatchLoading ? (
-              <RingLoader className="-ml-5" color={"red"} size={"30px"} />
-            ) : (
-              <button onClick={handleWatch}>
-                {isWatch && (
-                  <AiFillHeart size={"30px"} color="red" className="m-auto" />
+          <div className="absolute -top-6 right-0 lg:m-2 m-2">
+            {user && (
+              <div>
+                {isWatchLoading ? (
+                  <RingLoader className="-ml-5" color={"red"} size={"30px"} />
+                ) : (
+                  <button onClick={handleWatch}>
+                    {isWatch && (
+                      <AiFillHeart
+                        size={"30px"}
+                        color="red"
+                        className="m-auto"
+                      />
+                    )}
+                    {!isWatch && (
+                      <AiOutlineHeart
+                        size={"30px"}
+                        color="red"
+                        className="m-auto"
+                      />
+                    )}
+                  </button>
                 )}
-                {!isWatch && (
-                  <AiOutlineHeart
-                    size={"30px"}
-                    color="red"
-                    className="m-auto"
-                  />
-                )}
-              </button>
+              </div>
             )}
           </div>
         )}

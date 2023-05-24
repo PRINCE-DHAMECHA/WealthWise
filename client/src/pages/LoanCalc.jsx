@@ -157,7 +157,7 @@ const LoanCalc = () => {
               >
                 <div className="flex flex-row">
                   <p className="w-1/3 m-auto dark:text-white">Amount: </p>
-                  <div className="w-full">
+                  <div className="w-2/3">
                     <input
                       value={amount}
                       onChange={(e) => {
@@ -171,7 +171,7 @@ const LoanCalc = () => {
                 </div>
                 <div className="flex flex-row">
                   <p className="w-1/3 m-auto dark:text-white">Rate ( % ) : </p>
-                  <div className="w-full">
+                  <div className="w-2/3">
                     <input
                       value={rate}
                       onChange={(e) => {
@@ -184,8 +184,10 @@ const LoanCalc = () => {
                   </div>
                 </div>
                 <div className="flex flex-row">
-                  <p className="w-1/3 m-auto dark:text-white">Loan Term: </p>
-                  <div className="w-full flex justify-start">
+                  <p className="w-1/3 m-auto mt-0 dark:text-white">
+                    Loan Term:{" "}
+                  </p>
+                  <div className="w-2/3 flex 2xl:flex-row flex-col justify-start">
                     <input
                       value={loanTerm}
                       onChange={(e) => {
@@ -195,12 +197,16 @@ const LoanCalc = () => {
                       className="m-auto ml-0 xl:h-9 h-7  text-center border-1 border-solid border-black rounded-md text-black"
                       min="0"
                     />
+                  </div>
+                </div>
+                <div className="flex flex-row -mt-5">
+                  <div className="w-1/2 text-left">
                     <select
                       value={loanTermUnit}
                       onChange={(e) => {
                         setLoanTermUnit(e.target.value);
                       }}
-                      className="mr-2 ml-0 xl:h-9 h-7 border-1 border-solid border-black rounded-md text-black"
+                      className="m-auto ml-0 xl:h-9 h-7  text-center border-1 border-solid border-black rounded-md text-black"
                     >
                       <option value="years">Years</option>
                       <option value="months">Months</option>
@@ -264,13 +270,19 @@ const LoanCalc = () => {
                     primaryXAxis={primaryxAxis}
                     primaryYAxis={primaryyAxis}
                     tooltip={{ enable: true }}
-                    legendSettings={{ background: "white" }}
+                    legendSettings={{
+                      background: "none",
+                      textStyle: {
+                        color: currentMode === "Dark" ? "white" : "black",
+                      },
+                    }}
                     ref={(chart) => (chartInstance = chart)}
                     background="none"
                     height="350rem"
                   >
                     <Inject
                       services={[
+                        Legend,
                         DataLabel,
                         Tooltip,
                         LineSeries,
@@ -294,6 +306,7 @@ const LoanCalc = () => {
                         }}
                         type="MultiColoredLine"
                         pointColorMapping="principalAxisColor"
+                        legendShape="Circle"
                       />
                       <SeriesDirective
                         dataSource={chartData}
@@ -308,6 +321,7 @@ const LoanCalc = () => {
                         }}
                         type="MultiColoredLine"
                         pointColorMapping="interestAxisColor"
+                        legendShape="Circle"
                       />
                     </SeriesCollectionDirective>
                   </ChartComponent>

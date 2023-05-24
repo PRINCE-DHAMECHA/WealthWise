@@ -9,6 +9,7 @@ import {
   SETUP_USER_SUCCESS,
   SETUP_USER_ERROR,
   LOGOUT_USER,
+  DISPLAY_PASS_ERROR,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -90,6 +91,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: DISPLAY_ALERT });
     clearAlert();
   };
+  const displayPassAlert = () => {
+    dispatch({ type: DISPLAY_PASS_ERROR });
+    clearAlert();
+  };
 
   const clearAlert = () => {
     setTimeout(() => {
@@ -138,6 +143,7 @@ const AppProvider = ({ children }) => {
       value={{
         ...state,
         displayAlert,
+        displayPassAlert,
         setupUser,
         logoutUser,
         authFetch,

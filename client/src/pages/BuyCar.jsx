@@ -58,7 +58,7 @@ const BuyCar = () => {
                 borderLeft: `2px solid ${currentColor}`,
                 borderRadius: "10px",
               }}
-              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
+              className="flex flex-col justify-center lg:w-1/2 text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
             >
               <div className="flex flex-row">
                 <p className="lg:w-1/2 w-full m-auto dark:text-white">
@@ -105,7 +105,7 @@ const BuyCar = () => {
                 borderLeft: `2px solid ${currentColor}`,
                 borderRadius: "10px",
               }}
-              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
+              className="flex flex-col justify-center lg:w-1/2 text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
             >
               {!err && (
                 <p>

@@ -8,7 +8,8 @@ import { Link } from "react-router-dom";
 const Stocks = () => {
   const [inp, setinp] = useState("");
   const [isIndian, setIsIndian] = useState(true);
-  const { currentColor } = useAppContext();
+  const { currentColor, user } = useAppContext();
+  console.log(user);
   return (
     <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full relative">
@@ -60,7 +61,8 @@ const Stocks = () => {
                     onClick={() => {
                       setIsIndian((prev) => !prev);
                     }}
-                    className="flex justify-around m-auto w-[102px] h-10 bg-red-500 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-9 after:w-12 after:transition-all peer-checked:bg-orange-600 text-white"
+                    style={{ background: currentColor }}
+                    className="flex justify-around m-auto w-[102px] h-10 rounded-full peer  peer-focus:ring-green-300  peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-9 after:w-12 after:transition-all text-white"
                   >
                     <p className="m-auto">India</p>
                     <p className="m-auto">USA</p>
@@ -88,7 +90,7 @@ const Stocks = () => {
                       >
                         <div
                           style={{ borderLeft: `1px solid ${currentColor}` }}
-                          className="m-auto rounded-lg flex justify-between z-0 shadow-sm  w-full  md:p-4 p-2 text-14 md:text-lg dark:text-white"
+                          className="m-auto rounded-lg flex justify-between z-0 shadow-sm  w-full  md:p-5 p-4 text-14 md:text-lg dark:text-white"
                         >
                           <h1 className="text-left">
                             {l["name"].length < 25

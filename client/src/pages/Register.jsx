@@ -21,6 +21,7 @@ export default function Register() {
     alertType,
     showAlert,
     displayAlert,
+    displayPassAlert,
     setupUser,
     alertText,
     currentMode,
@@ -50,6 +51,10 @@ export default function Register() {
     const { name, email, password, isMember } = state;
     if (!email || !password || (!isMember && !name)) {
       displayAlert();
+      return;
+    }
+    if (password.length <= 4) {
+      displayPassAlert();
       return;
     }
     const currentUser = { name, email, password };

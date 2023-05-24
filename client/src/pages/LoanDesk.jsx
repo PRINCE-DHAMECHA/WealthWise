@@ -60,12 +60,14 @@ const LoanDesk = () => {
               </p>
               <p className="w-60 block m-auto py-0.5">
                 Givings:{" "}
-                <span style={{ color: "#00ff11" }}>{user.givings} &#8377;</span>
+                <span style={{ color: "#00ff11" }}>
+                  {user.givings.toFixed(2)} &#8377;
+                </span>
               </p>
               <p className="w-60 block m-auto py-0.5">
                 Debt:{" "}
                 <span style={{ color: "#ff0d00" }}>
-                  {user.borrowings} &#8377;
+                  {user.borrowings.toFixed(2)} &#8377;
                 </span>
               </p>
             </div>
@@ -106,14 +108,7 @@ const LoanDesk = () => {
                     );
                   })
                 ) : (
-                  <h1
-                    style={{
-                      borderLeft: "2px solid",
-                      borderColor: currentColor,
-                      borderRadius: "10px",
-                    }}
-                    className="p-2 dark:text-white text-xl"
-                  >
+                  <h1 className="p-2 dark:text-white text-xl">
                     You Don't Have Any Loan Due
                   </h1>
                 )}
@@ -130,28 +125,12 @@ const LoanDesk = () => {
                     );
                   })
                 ) : (
-                  <h1
-                    style={{
-                      borderLeft: "2px solid",
-                      borderColor: currentColor,
-                      borderRadius: "10px",
-                    }}
-                    className="p-2 dark:text-white text-xl"
-                  >
+                  <h1 className="p-2 dark:text-white text-xl">
                     No One Owe You A Loan
                   </h1>
                 )}
               </div>
             )}
-            {/* <div className="flex m-2 flex-col gap-2 mt-5">
-              <p className="text-xl font-bold">Tip For Repay Loan Quickly</p>
-              <p>Buy: {MarketViewData[currentBuy.stockIndex].stockName} </p>
-              <p>current price: {currentBuy["currentPrice"]}</p>
-              <p>Target high: {currentBuy["maxPrice"]}</p>
-              <p>
-                Possible Gain: {(currentBuy["possibleGain"] * 100).toFixed(2)}%
-              </p>
-            </div> */}
           </div>
         )}
       </div>

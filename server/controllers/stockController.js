@@ -109,11 +109,6 @@ const priceChart = async (req, res) => {
       }?metrics=high?&interval=30m&range=1d`
     )
     .then((d) => {
-      console.log(
-        `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}${
-          isIndian ? ".ns" : ""
-        }?metrics=high?&interval=30m&range=1d`
-      );
       let time = d?.data?.chart?.result[0]?.timestamp;
       let price = d?.data?.chart?.result[0]?.indicators?.quote[0]?.close;
       let arr = [];

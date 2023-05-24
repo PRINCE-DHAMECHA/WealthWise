@@ -145,7 +145,7 @@ const ApplyLoan = ({ isRepay }) => {
               borderLeft: `2px solid ${currentColor}`,
               borderRadius: "10px",
             }}
-            className="flex flex-row gap-10 justify-center text-left lg:w-2/3 w-full m-auto p-6"
+            className="flex flex-row gap-10 justify-center text-left lg:w-2/3 w-full m-auto p-6 shadow-md dark:shadow-gray-600"
           >
             <div className="w-9/12">
               <p>Lender : {lender?.toUpperCase()}</p>
