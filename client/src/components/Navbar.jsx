@@ -57,7 +57,6 @@ const Navbar = () => {
         {user ? (
           <div className="flex">
             <div className="flex items-center flex-row gap-2 p-1  rounded-lg">
-              <SetTheme />
               <NavLink to="/portfolio" className="flex flex-row text-lg mr-1">
                 <span className="text-black dark:text-white ">
                   <AiOutlineUser size={"30px"} />
@@ -80,22 +79,22 @@ const Navbar = () => {
               >
                 {myText}
               </button>
+              <SetTheme />
             </div>
           </div>
         ) : (
-          <div className="flex flex-row gap-2 justify-center">
-            <SetTheme />
-            <NavLink to="/portfolio" className="flex text-lg mr-1 gap-3">
-              <button
-                type="button"
-                style={{ backgroundColor: currentColor, borderRadius: "10px" }}
-                className={
-                  "py-1 mt-2 px-5 hover:drop-shadow-xl text-white flex justify-center gap-2"
-                }
-              >
-                <span>Login</span>
-              </button>
+          <div className="flex items-center flex-row gap-2 p-1  rounded-lg">
+            <NavLink
+              to="/portfolio"
+              style={{
+                backgroundColor: currentColor,
+                borderRadius: "10px",
+              }}
+              className={`text-lg text-white px-4 py-1 hover:drop-shadow-xl `}
+            >
+              <span>Login</span>
             </NavLink>
+            <SetTheme />
           </div>
         )}
       </div>
