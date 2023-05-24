@@ -48,9 +48,9 @@ const SetTheme = () => {
             type="button"
             className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
             onClick={() => setDis((prev) => !prev)}
-            style={{ background: currentColor, borderRadius: "50%" }}
+            style={{ background:"white", borderRadius: "50%",border: `2px solid ${currentColor}`, }}
           >
-            <HiOutlineLightBulb />
+            <HiOutlineLightBulb style={{color:currentColor}} />
           </button>
         </TooltipComponent>
       </div>
