@@ -20,6 +20,7 @@ import BuyCar from "./pages/BuyCar";
 import LoanCalc from "./pages/LoanCalc";
 import SIP from "./pages/SIP";
 import Watchlist from "./pages/Watchlist";
+import News from "./pages/News";
 function App() {
   const { currentMode } = useAppContext();
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/ThemePicker" element={<ColorPicker />}></Route>
             <Route path="/stockHome" element={<Stocks />}></Route>
+            <Route path="/news" element={<News />}></Route>
             <Route path="/buyCar" element={<BuyCar />}></Route>
             <Route path="/loanCalc" element={<LoanCalc />}></Route>
             <Route path="/sip" element={<SIP />}></Route>

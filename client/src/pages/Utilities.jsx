@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 import { Navbar, Sidebar } from "../components";
 import SetTheme from "../components/SetTheme";
+import Info from "../components/Info";
 
 const Demo = () => {
   const { activeMenu } = useAppContext();
@@ -30,7 +31,7 @@ const Demo = () => {
             <Outlet />
           </div>
         </div>
-        <SetTheme />
+        <Info />
       </div>
     </>
   );

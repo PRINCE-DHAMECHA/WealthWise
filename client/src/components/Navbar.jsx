@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineMenu, AiOutlineUser } from "react-icons/ai";
 import { useAppContext } from "../context/appContext";
 import { NavLink } from "react-router-dom";
+import SetTheme from "./SetTheme";
 
 const NavButton = ({ cunstomFunc, icon, color }) => (
   <button
@@ -56,6 +57,7 @@ const Navbar = () => {
         {user ? (
           <div className="flex">
             <div className="flex items-center flex-row gap-2 p-1  rounded-lg">
+              <SetTheme />
               <NavLink to="/portfolio" className="flex flex-row text-lg mr-1">
                 <span className="text-black dark:text-white ">
                   <AiOutlineUser size={"30px"} />
@@ -81,17 +83,20 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <NavLink to="/portfolio" className="flex text-lg mr-1 gap-3">
-            <button
-              type="button"
-              style={{ backgroundColor: currentColor, borderRadius: "10px" }}
-              className={
-                "py-1 mt-2 px-5 hover:drop-shadow-xl text-white flex justify-center gap-2"
-              }
-            >
-              <span>Login</span>
-            </button>
-          </NavLink>
+          <div className="flex flex-row gap-2 justify-center">
+            <SetTheme />
+            <NavLink to="/portfolio" className="flex text-lg mr-1 gap-3">
+              <button
+                type="button"
+                style={{ backgroundColor: currentColor, borderRadius: "10px" }}
+                className={
+                  "py-1 mt-2 px-5 hover:drop-shadow-xl text-white flex justify-center gap-2"
+                }
+              >
+                <span>Login</span>
+              </button>
+            </NavLink>
+          </div>
         )}
       </div>
     </div>

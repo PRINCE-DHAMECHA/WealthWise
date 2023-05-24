@@ -13,6 +13,7 @@ import { TbNotes } from "react-icons/tb";
 import { FaCar, FaGratipay } from "react-icons/fa";
 import { IoIosTrendingUp } from "react-icons/io";
 import { GiReceiveMoney } from "react-icons/gi";
+import { TiNews } from "react-icons/ti";
 
 export const links = [
   {
@@ -42,6 +43,11 @@ export const links = [
         name: "My Watchlist",
         to: "watchlist",
         icon: <AiOutlineEye />,
+      },
+      {
+        name: "News",
+        to: "news",
+        icon: <TiNews />,
       },
     ],
   },
@@ -249,8 +255,7 @@ export const MarketViewData = [
 export const InformationData = [
   {
     routeName: "SIPCalculator",
-    details : "A SIP calculator is a simple tool that allows individuals to get an idea of the returns on their mutual fund investments made through SIP. SIP investments in mutual funds have become one of the most popular investment options for millennials lately."
+    details:
+      "A SIP calculator is a simple tool that allows individuals to get an idea of the returns on their mutual fund investments made through SIP. SIP investments in mutual funds have become one of the most popular investment options for millennials lately.",
   },
-  
 ];
-
