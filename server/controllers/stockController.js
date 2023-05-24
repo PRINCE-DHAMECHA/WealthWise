@@ -2,11 +2,13 @@ import axios from "axios";
 import { StatusCodes } from "http-status-codes";
 
 const assetProfile = async (req, res) => {
-  const { symbol } = req.body;
+  const { symbol, isIndian } = req.body;
   let obj = {};
   await axios
     .get(
-      `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}.ns?modules=assetProfile`
+      `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}${
+        isIndian ? ".ns" : ""
+      }?modules=assetProfile`
     )
     .then((d) => {
       let data = d?.data?.quoteSummary?.result[0]?.assetProfile;
@@ -21,7 +23,9 @@ const assetProfile = async (req, res) => {
     });
   await axios
     .get(
-      `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}.ns?modules=financialData`
+      `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${symbol}${
+        isIndian ? ".ns" : ""
+      }?modules=financialData`
     )
     .then((d) => {
       let data = d?.data?.quoteSummary?.result[0]?.financialData;
@@ -36,11 +40,13 @@ const assetProfile = async (req, res) => {
   res.json(obj);
 };
 const priceChart = async (req, res) => {
-  const { symbol } = req.body;
+  const { symbol, isIndian } = req.body;
   let obj = {};
   await axios
     .get(
-      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}.ns?metrics=high?&interval=1mo&range=6mo`
+      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}${
+        isIndian ? ".ns" : ""
+      }?metrics=high?&interval=1mo&range=6mo`
     )
     .then((d) => {
       let time = d?.data?.chart?.result[0]?.timestamp;
@@ -58,7 +64,9 @@ const priceChart = async (req, res) => {
     });
   await axios
     .get(
-      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}.ns?metrics=high?&interval=5d&range=1mo`
+      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}${
+        isIndian ? ".ns" : ""
+      }?metrics=high?&interval=5d&range=1mo`
     )
     .then((d) => {
       let time = d?.data?.chart?.result[0]?.timestamp;
@@ -76,7 +84,9 @@ const priceChart = async (req, res) => {
     });
   await axios
     .get(
-      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}.ns?metrics=high?&interval=1d&range=1wk`
+      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}${
+        isIndian ? ".ns" : ""
+      }?metrics=high?&interval=1d&range=1wk`
     )
     .then((d) => {
       let time = d?.data?.chart?.result[0]?.timestamp;
@@ -94,9 +104,16 @@ const priceChart = async (req, res) => {
     });
   await axios
     .get(
-      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}.ns?metrics=high?&interval=30m&range=1d`
+      `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}${
+        isIndian ? ".ns" : ""
+      }?metrics=high?&interval=30m&range=1d`
     )
     .then((d) => {
+      console.log(
+        `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}${
+          isIndian ? ".ns" : ""
+        }?metrics=high?&interval=30m&range=1d`
+      );
       let time = d?.data?.chart?.result[0]?.timestamp;
       let price = d?.data?.chart?.result[0]?.indicators?.quote[0]?.close;
       let arr = [];

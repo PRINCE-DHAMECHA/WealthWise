@@ -36,7 +36,7 @@ function App() {
             <Route path="/loanCalc" element={<LoanCalc />}></Route>
             <Route path="/sip" element={<SIP />}></Route>
             <Route
-              path="/stockDetails/:name/:sym"
+              path="/stockDetails/:exc/:name/:sym"
               element={<StockDetails />}
             ></Route>
           </Route>
