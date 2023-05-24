@@ -13,14 +13,14 @@ const SetTheme = () => {
           <button
             type="button"
             className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-            onClick={() => setDis((prev) => !prev)}
-            style={{
-              background: "white",
-              borderRadius: "50%",
-              border: `2px solid ${currentColor}`,
-            }}
+            onClick={setMode}
+            style={{ background: currentColor, borderRadius: "50%" }}
           >
-            <HiOutlineLightBulb style={{ color: currentColor }} />
+            {currentMode === "Dark" ? (
+              <IoSunnyOutline value="Light" />
+            ) : (
+              <IoMoonOutline value="Dark" />
+            )}
           </button>
         </TooltipComponent>
       </div>
