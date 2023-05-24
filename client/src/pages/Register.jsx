@@ -33,7 +33,7 @@ export default function Register() {
       setLoading(false);
     }, 1000);
     if (user) {
-      navigate("/accounts");
+      navigate("/stockHome");
     }
     return () => {
       clearTimeout(t);
