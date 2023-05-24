@@ -9,20 +9,18 @@ const SetTheme = () => {
   return (
     <>
       <div style={{ zIndex: "1000" }}>
-        <TooltipComponent content="Switch Mode" position="Top">
-          <button
-            type="button"
-            className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-            onClick={setMode}
-            style={{ background: currentColor, borderRadius: "50%" }}
-          >
-            {currentMode === "Dark" ? (
-              <IoSunnyOutline value="Light" />
-            ) : (
-              <IoMoonOutline value="Dark" />
-            )}
-          </button>
-        </TooltipComponent>
+        <button
+          type="button"
+          className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+          onClick={setMode}
+          style={{ background: currentColor, borderRadius: "50%" }}
+        >
+          {currentMode === "Dark" ? (
+            <IoSunnyOutline value="Light" />
+          ) : (
+            <IoMoonOutline value="Dark" />
+          )}
+        </button>
       </div>
       {/* {themeSettings && <ThemeSettings />} */}
     </>
