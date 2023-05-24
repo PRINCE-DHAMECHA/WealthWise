@@ -94,7 +94,7 @@ const SIP = () => {
                   borderLeft: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6"
+                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
                 <div className="flex flex-row">
                   <p className="xl:w-1/2 w-full m-auto dark:text-white">
@@ -150,7 +150,7 @@ const SIP = () => {
                   borderLeft: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6"
+                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
                 <p>
                   Return Earned :{" "}
@@ -185,7 +185,7 @@ const SIP = () => {
                 borderLeft: `2px solid ${currentColor}`,
                 borderRadius: "10px",
               }}
-              className="flex flex-col justify-center text-center xl:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-6 p-3"
+              className="flex flex-col justify-center text-center xl:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-6 p-3 shadow-md dark:shadow-gray-600"
             >
               {err ? (
                 <div className="m-auto text-red-500">

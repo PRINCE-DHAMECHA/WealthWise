@@ -229,6 +229,7 @@ const StockDetails = () => {
         const { data } = await authFetch.post("stockWatch/add", {
           stockName: params.name,
           stockSymbol: params.sym,
+          exc: params.exc,
         });
         if (data.success) {
           await authFetch

@@ -5,7 +5,7 @@ import { BadRequestError } from "../errors/index.js";
 import User from "../models/User.js";
 
 const addWatch = async (req, res) => {
-  const { stockName, stockSymbol } = req.body;
+  const { stockName, stockSymbol, exc } = req.body;
   const createdBy = req.user.userId;
   try {
     const user = await User.findById(createdBy);
@@ -16,13 +16,13 @@ const addWatch = async (req, res) => {
         (stock) => stock.symbol === stockSymbol && stock.name === stockName
       );
       if (!stockExists) {
-        watch.stocks.push({ name: stockName, symbol: stockSymbol });
+        watch.stocks.push({ name: stockName, symbol: stockSymbol, exc });
         await watch.save();
       }
     } else {
       StockWatch.create({
         name,
-        stocks: { name: stockName, symbol: stockSymbol },
+        stocks: { name: stockName, symbol: stockSymbol, exc },
         createdBy,
       });
     }
@@ -71,7 +71,9 @@ const getWatches = async (req, res) => {
       let obj = {};
       await axios
         .get(
-          `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${i.symbol}.ns?modules=financialData`
+          `https://query1.finance.yahoo.com/v10/finance/quoteSummary/${
+            i.symbol
+          }${i.exc === "NSE" ? ".ns" : ""}?modules=financialData`
         )
         .then((d) => {
           let data = d?.data?.quoteSummary?.result[0]?.financialData;
@@ -79,6 +81,7 @@ const getWatches = async (req, res) => {
           obj.targetHigh = data?.targetHighPrice?.fmt;
           obj.name = i.name;
           obj.symbol = i.symbol;
+          obj.exc = i.exc;
           allWatch.push(obj);
         })
         .catch((e) => {
@@ -87,6 +90,7 @@ const getWatches = async (req, res) => {
     }
     res.status(StatusCodes.ACCEPTED).json({ watches: allWatch });
   } catch (e) {
+    console.log(e);
     res.status(StatusCodes.BAD_REQUEST).json({ success: false });
   }
 };

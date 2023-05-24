@@ -9,6 +9,7 @@ const BuyCar = () => {
   const [interest, setInterest] = useState(8.5);
   const [emi, setEmi] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [err, setErr] = useState(true);
   useEffect(() => {
     setLoading(true);
     let tempInt = interest / 12;
@@ -18,10 +19,15 @@ const BuyCar = () => {
     let monthly = (((price * 4) / 5) * x * tempInt) / (x - 1);
     setEmi(monthly);
     setLoading(false);
+    setErr(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // P x R x (1+R)^N / [(1+R)^N-1]
   const handleChange = () => {
+    if (price <= 0 || interest <= 0 || interest > 100) {
+      setErr(true);
+      return;
+    }
     setLoading(true);
     let tempInt = interest / 12;
     tempInt = tempInt / 100;
@@ -29,8 +35,12 @@ const BuyCar = () => {
     let x = Math.pow(1 + tempInt, payments);
     let monthly = (((price * 4) / 5) * x * tempInt) / (x - 1);
     setEmi(monthly);
+    setErr(false);
     setLoading(false);
   };
+  useEffect(() => {
+    handleChange();
+  }, [price, interest]);
   return (
     <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
@@ -48,7 +58,7 @@ const BuyCar = () => {
                 borderLeft: `2px solid ${currentColor}`,
                 borderRadius: "10px",
               }}
-              className="flex flex-col justify-center lg:w-1/2 text-left text-base lg:text-lg dark:text-white gap-6 p-6"
+              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
             >
               <div className="flex flex-row">
                 <p className="lg:w-1/2 w-full m-auto dark:text-white">
@@ -89,31 +99,34 @@ const BuyCar = () => {
               <p>
                 EMI tenure should be maximum <b>4</b> years
               </p>
-              <button
-                onClick={handleChange}
-                style={{
-                  backgroundColor: currentColor,
-                  borderRadius: "10px",
-                }}
-                className={`text-md text-white p-3 hover:drop-shadow-xl `}
-              >
-                Calculate
-              </button>
             </div>
             <div
               style={{
                 borderLeft: `2px solid ${currentColor}`,
                 borderRadius: "10px",
               }}
-              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-6 p-6 "
+              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
             >
-              <p>
-                Your salary need to be minimum <b>{(emi * 10).toFixed(2)}</b>{" "}
-                &#8377;
-              </p>
-              <p>Down Payment: {(Number(price) / 5).toFixed(2)}</p>
-              <p>EMI will be: {Number(emi).toFixed(2)}&#8377;</p>
-              <p>Loan tenure: {4} Years</p>
+              {!err && (
+                <p>
+                  Your salary need to be minimum{" "}
+                  <b>{err ? "NA" : (emi * 10).toFixed(2)}</b> &#8377;
+                </p>
+              )}
+              {!err && (
+                <p>
+                  Down Payment: {err ? "NA" : (Number(price) / 5).toFixed(2)}
+                </p>
+              )}
+              {!err && (
+                <p>EMI will be: {err ? "NA" : Number(emi).toFixed(2)}&#8377;</p>
+              )}
+              {!err && <p>Loan tenure: {err ? "NA" : 4} Years</p>}
+              {err && (
+                <p className="text-red-500 block m-auto text-xl">
+                  Please Provide Valid Values
+                </p>
+              )}
             </div>
           </div>
         )}

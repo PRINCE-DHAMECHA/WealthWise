@@ -15,6 +15,10 @@ const stockWatchSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      exc: {
+        type: String,
+        required: true,
+      },
     },
   ],
   createdBy: {
