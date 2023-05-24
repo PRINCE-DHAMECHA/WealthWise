@@ -12,17 +12,14 @@ const Info = () => {
   return (
     <>
       <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
-        <TooltipComponent content="Info" position="Top">
-          {/* onClick={() => setThemeSettings(true)} */}
-          <button
-            type="button"
-            className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
-            onClick={() => setDis((prev) => !prev)}
-            style={{ background: currentColor, borderRadius: "50%" }}
-          >
-            <HiOutlineLightBulb />
-          </button>
-        </TooltipComponent>
+        <button
+          type="button"
+          className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+          onClick={() => setDis((prev) => !prev)}
+          style={{ background: currentColor, borderRadius: "50%" }}
+        >
+          <HiOutlineLightBulb />
+        </button>
       </div>
       {dis && <InfoCard />}
     </>
