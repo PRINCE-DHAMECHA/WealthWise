@@ -24,7 +24,7 @@ const Landing = () => {
           <Button
             color="white"
             bgColor={currentColor}
-            text="Start Investing"
+            text="Start Exploring"
             borderRadius="10px"
             size="md"
           ></Button>

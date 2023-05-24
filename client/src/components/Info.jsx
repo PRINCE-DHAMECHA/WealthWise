@@ -1,12 +1,10 @@
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import React, { useState } from "react";
 import InfoCard from "./InfoCard";
-import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import { useAppContext } from "../context/appContext";
 import { HiOutlineLightBulb } from "react-icons/hi";
-
+import { IoCloseSharp } from "react-icons/io5";
 const Info = () => {
-  const { currentMode, currentColor } = useAppContext();
+  const { currentColor } = useAppContext();
   const [dis, setDis] = useState(false);
 
   return (
@@ -18,7 +16,7 @@ const Info = () => {
           onClick={() => setDis((prev) => !prev)}
           style={{ background: "white", borderRadius: "50%" }}
         >
-          <HiOutlineLightBulb color={currentColor} />
+          {dis ? <IoCloseSharp /> : <HiOutlineLightBulb />}
         </button>
       </div>
       {dis && <InfoCard />}
