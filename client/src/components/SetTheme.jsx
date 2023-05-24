@@ -33,7 +33,7 @@ import React, { useState } from "react";
 import InfoCard from "./InfoCard";
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import { useAppContext } from "../context/appContext";
-import {HiOutlineLightBulb} from "react-icons/hi";
+import { HiOutlineLightBulb } from "react-icons/hi";
 
 const SetTheme = () => {
   const { currentMode, currentColor } = useAppContext();
@@ -50,11 +50,11 @@ const SetTheme = () => {
             onClick={() => setDis((prev) => !prev)}
             style={{ background: currentColor, borderRadius: "50%" }}
           >
-            < HiOutlineLightBulb />
+            <HiOutlineLightBulb />
           </button>
         </TooltipComponent>
       </div>
-      {dis && (<InfoCard />)}
+      {dis && <InfoCard />}
     </>
   );
 };
