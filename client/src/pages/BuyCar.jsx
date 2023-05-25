@@ -22,7 +22,6 @@ const BuyCar = () => {
     setErr(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // P x R x (1+R)^N / [(1+R)^N-1]
   const handleChange = () => {
     if (price <= 0 || interest <= 0 || interest > 100) {
       setErr(true);
@@ -40,6 +39,7 @@ const BuyCar = () => {
   };
   useEffect(() => {
     handleChange();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [price, interest]);
   return (
     <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">

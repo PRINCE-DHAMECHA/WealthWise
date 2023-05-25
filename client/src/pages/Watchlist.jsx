@@ -15,7 +15,6 @@ const Watchlist = () => {
         setWatchlist(data.watches);
         setLoading(false);
       } catch (e) {
-        console.log(e);
         setLoading(false);
       }
     };

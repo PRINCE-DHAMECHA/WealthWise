@@ -5,7 +5,6 @@ import RingLoader from "react-spinners/RingLoader";
 import { MarketViewData } from "../data/dummy";
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
 import { HiOutlineRefresh } from "react-icons/hi";
-import { NavLink } from "react-router-dom";
 import {
   AccumulationChartComponent,
   AccumulationDataLabel,
@@ -35,7 +34,6 @@ const Portfolio = () => {
         setuser(data[0]);
         setLoading(false);
       } catch (error) {
-        console.log(error);
         setLoading(false);
       }
     };
@@ -87,7 +85,6 @@ const Portfolio = () => {
       chartData[i].text = ((Number(chartData[i].y) / inv) * 100).toFixed(2);
       chartData[i].text += "%";
     }
-    console.log(chartData);
     setDataChart(chartData);
     setPortfolioshare(arr);
     setInvested(inv.toFixed(2));

@@ -38,7 +38,6 @@ const StockDetails = () => {
   const [isWatch, setIsWatch] = useState(false);
   const [isWatchLoading, setIsWatchLoading] = useState(false);
   const { currentColor, authFetch, currentMode, user } = useAppContext();
-  console.log(user);
   useEffect(() => {
     const fetchDetails = async () => {
       await authFetch
@@ -250,7 +249,6 @@ const StockDetails = () => {
             });
         }
       } else {
-        console.log(watch._id);
         const { data } = await authFetch.delete(
           `stockWatch/delete/${watch._id}`
         );

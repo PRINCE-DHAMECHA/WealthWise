@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import InfoCard from "./InfoCard";
 import { useAppContext } from "../context/appContext";
-import { HiOutlineLightBulb } from "react-icons/hi";
 import { IoCloseSharp } from "react-icons/io5";
-import { AiFillInfoCircle } from "react-icons/ai";
 import { BsInfoLg } from "react-icons/bs";
 const Info = () => {
   const { currentColor } = useAppContext();

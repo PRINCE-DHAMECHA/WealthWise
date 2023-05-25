@@ -42,6 +42,7 @@ const LoanCalc = () => {
   useEffect(() => {
     setLoading(false);
     handleChange();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amount, rate, loanTerm, loanTermUnit]);
 
   const handleChange = () => {
@@ -51,8 +52,8 @@ const LoanCalc = () => {
       amount >= 100000000 ||
       rate <= 0 ||
       rate > 100 ||
-      (loanTermUnit == "years" && (loanTerm >= 100 || loanTerm <= 0)) ||
-      (loanTermUnit == "months" && (loanTerm >= 1200 || loanTerm <= 0))
+      (loanTermUnit === "years" && (loanTerm >= 100 || loanTerm <= 0)) ||
+      (loanTermUnit === "months" && (loanTerm >= 1200 || loanTerm <= 0))
     ) {
       setErr(true);
       setLoading(false);

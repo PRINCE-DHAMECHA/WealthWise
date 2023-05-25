@@ -70,7 +70,6 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
     });
     if (data?.msg) {
       setmsg(data.msg);
-      console.log(msg);
     } else {
       setMyShare({ ...data });
       let temp = new Date(data.buyTime);
@@ -254,12 +253,17 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     {isAction === "Buy" ? (
                       <p className="text-left w-2/3 m-auto block">
                         Brokerage :{" "}
-                        {Math.min(
-                          (ltp * Quantity * 0.0003).toLocaleString("en-IN", {
-                            maximumFractionDigits: 2,
-                          }),
-                          20
-                        )}
+                        {Quantity * ltp < 100000
+                          ? Math.min(
+                              (ltp * Quantity * 0.0003).toLocaleString(
+                                "en-IN",
+                                {
+                                  maximumFractionDigits: 2,
+                                }
+                              ),
+                              20
+                            )
+                          : 20}
                         &#8377;
                       </p>
                     ) : (

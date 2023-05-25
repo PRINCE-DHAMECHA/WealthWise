@@ -10,7 +10,7 @@ const CreateNote = () => {
   const [principal, setPrincipal] = useState(1000);
   const [interest, setInterest] = useState(6);
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [err, setErr] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,13 +21,11 @@ const CreateNote = () => {
         principal: principal,
         interest: interest,
       });
-      setMessage("Note Created!!");
+      setErr(false);
       setLoading(false);
       navigate("/notes");
     } catch (error) {
-      console.log(error);
-      setMessage("Some Thing Went Wrong!!");
-      console.log(message);
+      setErr(true);
       setLoading(false);
     }
   };
@@ -81,9 +79,14 @@ const CreateNote = () => {
               <div className="text-center mt-5 text-xl">
                 <p className="block m-auto">
                   Platform Fees:{" "}
-                  {(principal * 0.005).toLocaleString("en-IN", {
-                    maximumFractionDigits: 2,
-                  })}
+                  {principal < 100000
+                    ? Math.max(
+                        (principal * 0.005).toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        }),
+                        0
+                      )
+                    : 1000}
                   &#8377;
                 </p>
               </div>
@@ -116,6 +119,7 @@ const CreateNote = () => {
                   </button>
                 </Link>
               </div>
+              {err && <p className="text-red-500">{"Something Went Wrong"}</p>}
             </div>
           </form>
         </div>

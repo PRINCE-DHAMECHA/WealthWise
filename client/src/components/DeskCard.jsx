@@ -29,8 +29,6 @@ const DeskCard = ({ data, isBorrow }) => {
       <div
         className="rounded-lg border dark:bg-[#3d4249] border-gray-100 cursor-pointer shadow-md dark:border-gray-700  h-auto p-5"
         style={{
-          // background: `linear-gradient(120deg,${rgba2} 20%,${rgba1})`,
-          // background: currentMode !== "Dark" ? rgba2 : "",
           borderLeft: `3px solid ${currentColor}`,
         }}
       >

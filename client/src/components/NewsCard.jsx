@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAppContext } from "../context/appContext";
-import { BiLinkExternal, MdExpand } from "react-icons/bi";
+import { BiLinkExternal } from "react-icons/bi";
 
 const NewsCard = ({ news }) => {
   const { currentColor } = useAppContext();
@@ -20,16 +20,18 @@ const NewsCard = ({ news }) => {
           className="md:absolute md:block hidden  top-3 right-3"
           href={news.link}
           target="_blank"
+          rel="noreferrer"
         >
-          <BiLinkExternal />
+          <BiLinkExternal color={currentColor} />
         </a>
       )}
       <a
         className="md:hidden block absolute top-2 right-2"
         href={news.link}
         target="_blank"
+        rel="noreferrer"
       >
-        <BiLinkExternal />
+        <BiLinkExternal color={currentColor} />
       </a>
       <p
         style={{

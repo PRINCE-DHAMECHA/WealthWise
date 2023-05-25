@@ -24,7 +24,6 @@ const register = async (req, res) => {
       token,
     });
   } catch (e) {
-    console.log(e);
     throw new BadRequestError("Something Went Wrong :(");
   }
 };

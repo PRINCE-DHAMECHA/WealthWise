@@ -11,15 +11,10 @@ const fetchNews = async (req, res) => {
     if (dataOld.length !== 0) {
       dataOld = dataOld[0];
       let dateDB = new Date(dataOld.createDate);
-      console.log(
-        dateDB.toISOString().substring(0, 10) ===
-          dateNow.toISOString().substring(0, 10)
-      );
       if (
         dateDB.toISOString().substring(0, 10) ===
         dateNow.toISOString().substring(0, 10)
       ) {
-        console.log(1);
         res
           .status(StatusCodes.ACCEPTED)
           .json({ success: true, resNews: dataOld });
@@ -120,7 +115,6 @@ const fetchNews = async (req, res) => {
     let resNews = await News.create({ newsArr: arr, createDate: new Date() });
     res.status(StatusCodes.ACCEPTED).json({ success: true, resNews });
   } catch (e) {
-    console.log(e);
     throw new BadRequestError("Something Went Wrong");
   }
 };

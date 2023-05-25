@@ -1,4 +1,3 @@
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import React from "react";
 import { IoSunnyOutline, IoMoonOutline } from "react-icons/io5";
 import { useAppContext } from "../context/appContext";

@@ -7,9 +7,7 @@ import {
   AiOutlineEye,
 } from "react-icons/ai";
 import { BsFillCalculatorFill } from "react-icons/bs";
-import { FiEdit } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
-import { TbNotes } from "react-icons/tb";
 import { FaCar, FaGratipay } from "react-icons/fa";
 import { IoIosTrendingUp } from "react-icons/io";
 import { GiReceiveMoney } from "react-icons/gi";
@@ -383,7 +381,7 @@ export const InformationData = [
           "When a company offers you a starting salary, calculate whether that salary after taxes meets your financial needs and savings goals. Many online calculators help you see your after-tax salary.",
       },
       {
-        title: "Know where you're spending your money",
+        title: "Know Where You're Spending Your Money",
         content:
           "Taking small manageable steps can help you to develop a new behaviour or habit. Try tracking everything you spend for a short period of time, like over the next month. Why? It can give you insights into how you spend money now and may highlight how spending even small amounts adds up over time.",
       },
@@ -408,22 +406,22 @@ export const InformationData = [
     routeName: ["MarketView"],
     contents: [
       {
-        title: "Ever Wonder How Stock Price Change?",
+        title: "Ever Wonder How Price of Stocks Change?",
         content:
           "The most crucial factor that causes share prices to fluctuate is the demand and supply. If an increased number of people start investing in a particular share, its demand is high, so its prices start to soar. Conversely, if many people want to sell a particular stock simultaneously, its supply will increase, so its prices will fall.",
       },
       {
-        title: "Factor Effecting Price of Stocks",
+        title: "Factor Affecting Price of Stocks",
         content:
           "A share or stock is nothing but the security that denotes equity ownership in a company. So, any positive or negative development in a company will directly impact its share price. It can be good or bad news about a company, any public announcement regarding a company's financials, the launch of a new product or brand, a tie-up or merger, or the resignation of senior personnel such as the CEO or Vice President of the company.",
       },
       {
-        title: "Factor Effecting Price of Stocks",
+        title: "Factor Affecting Price of Stocks",
         content:
           "Any positive or negative news about the industry to which a company belongs can also influence its share price. For example, suppose the Government announced the ease in compliance for the distribution of telecom licenses, and the companies who operate in the telecom industry will witness a hike in their share prices.",
       },
       {
-        title: "Factor Effecting Price of Stocks",
+        title: "Factor Affecting Price of Stocks",
         content:
           "The current market trend also impacts the prices of shares. You must have heard these two terms repeatedly - a bull market and a bear market. A bull market is when the indices go up, and a bear market is when the indices go down. That usually happens when the investors feel optimistic or pessimistic about the market's future.",
       },
@@ -433,22 +431,22 @@ export const InformationData = [
     routeName: ["buyStock"],
     contents: [
       {
-        title: "Long-Term Trading",
+        title: "Long Term Trading",
         content:
           "Long-term investing in stock markets involves buying stocks with an intention to remain invested in them for a long period. This could generally be five years or more. It's often used by investors to fetch meaningful returns from the stock markets.",
       },
       {
-        title: "Intraday Trading",
+        title: "Intra Day Trading",
         content:
-          "Intraday trading is buying and selling securities, such as stocks, daily without taking overnight ownership of these. Since both buying and selling of security happens within the trading hours of a stock exchange, there is no delivery of stocks required in the investor or trader's Demat account. Intraday orders in India are generally placed between 9:30 am and 3:30 pm.",
+          "Intra day trading is buying and selling securities, such as stocks, daily without taking overnight ownership of these. Since both buying and selling of security happens within the trading hours of a stock exchange, there is no delivery of stocks required in the investor or trader's Demat account. Intra day orders in India are generally placed between 9:30 am and 3:30 pm.",
       },
       {
         title: "Swing Trading",
         content:
-          "Swing trading is a type of trading strategy in which security, such as a stock, is held for a time period that could range from a few days to a few weeks. This strategy involves an investment period that is longer as compared to intraday trading but shorter as compared to long term investing. The objective of swing trading is to make the most of a potentially large stock price move.",
+          "Swing trading is a type of trading strategy in which security, such as a stock, is held for a time period that could range from a few days to a few weeks. This strategy involves an investment period that is longer as compared to intra day trading but shorter as compared to long term investing. The objective of swing trading is to make the most of a potentially large stock price move.",
       },
       {
-        title: "What is Depository participate?",
+        title: "What is Depository Participate?",
         content:
           "A depository is an entity holding securities of an investor through stockbrokers or agents. These stockbrokers are called Depository Participants. As an investor, your securities, i.e., shares, debentures, government securities, bonds, Mutual Fund units, etc., are held by the respective depositories in an electronic format.",
       },
@@ -473,11 +471,6 @@ export const InformationData = [
           "The Good Till Triggered (GTT) feature is an order that stays active until the trigger condition is met. The validity of the trigger is one year. A limit order is placed and executed if there are sufficient funds in the Zerodha account. A notification is sent to the registered email ID and mobile device every time a GTT is triggered, and an order is placed on the exchange.",
       },
       {
-        title: "Good Till Triggered(GTT) in Zerodha",
-        content:
-          "The Good Till Triggered (GTT) feature is an order that stays active until the trigger condition is met. The validity of the trigger is one year. A limit order is placed and executed if there are sufficient funds in the Zerodha account. A notification is sent to the registered email ID and mobile device every time a GTT is triggered, and an order is placed on the exchange.",
-      },
-      {
         title: "Cash and Carry (CNC)",
         content:
           "Cash and Carry (CNC) is used for delivery based trading in equity. In delivery based trade, you intend to hold the stocks overnight for however long you wish.",
@@ -485,12 +478,12 @@ export const InformationData = [
       {
         title: "Margin Intraday Square-off (MIS)",
         content:
-          "These order types are used in intraday trades when you don't seek the delivery of shares. Shares bought in MIS order have to be squared off the same day. Entry and Exit have to happen on the same day.",
+          "These order types are used in intra day trades when you don't seek the delivery of shares. Shares bought in MIS order have to be squared off the same day. Entry and Exit have to happen on the same day.",
       },
       {
         title: "Auto Square Off",
         content:
-          "If you have not squared off your Intraday positions in any segment then broker will automatically square off your position at certain time before market close and charges will be applicable.",
+          "If you have not squared off your Intra day positions in any segment then broker will automatically square off your position at certain time before market close and charges will be applicable.",
       },
       {
         title: "Benefits of MIS order in Zerodha",
@@ -767,7 +760,7 @@ export const InformationData = [
           "The calculator calculates the minimum salary required to qualify for a loan based on the user-provided car price and the assumption of a fixed interest rate. This helps users understand the income level needed to support the desired car purchase.",
       },
       {
-        title: "EMI Calculate",
+        title: "EMI Calculated",
         content:
           "The calculator calculates the monthly Equated Monthly Installment (EMI) based on the user-provided car price, down payment, interest rate, and loan duration. The EMI represents the regular payment amount to be made towards the loan each month.",
       },

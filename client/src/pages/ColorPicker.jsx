@@ -2,12 +2,7 @@ import React from "react";
 import { ColorPickerComponent } from "@syncfusion/ej2-react-inputs";
 
 import { Header } from "../components";
-import { NavLink } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
-import { themeColors } from "../data/dummy";
-import { BsCheck } from "react-icons/bs";
-import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
 const CustomColorPicker = ({ id, mode }) => {
   const { setColor } = useAppContext();
   return (
@@ -18,8 +13,6 @@ const CustomColorPicker = ({ id, mode }) => {
       inline
       showButtons={false}
       change={(args) => {
-        // document.getElementById("preview").style.backgroundColor =
-        //   args.currentValue.hex;
         setColor(args.currentValue.hex);
       }}
     />
@@ -27,7 +20,7 @@ const CustomColorPicker = ({ id, mode }) => {
 };
 
 const ColorPicker = () => {
-  const { currentColor, setColor } = useAppContext();
+  const { currentColor } = useAppContext();
   return (
     <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 mx-2 md:mx-9 p-2 pb-10 md:p-10 dark:bg-secondary-dark-bg bg-white rounded-3xl">
       <Header category="App" title="Color Picker" />

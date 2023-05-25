@@ -8,7 +8,7 @@ const News = () => {
   const { currentColor, authFetch } = useAppContext();
   const [loading, setLoading] = useState(true);
   const [news, setNews] = useState([]);
-  const [inp, setinp] = useState("");
+  const [inp, setInp] = useState("");
 
   useEffect(() => {
     setLoading(true);
@@ -16,7 +16,6 @@ const News = () => {
       try {
         const { data } = await authFetch.get("/news/getNews");
         const { resNews } = data;
-        console.log(resNews);
         setNews(resNews.newsArr);
         setLoading(false);
       } catch (e) {
@@ -25,8 +24,8 @@ const News = () => {
       }
     };
     handleFetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(news);
   const breakpointObj = {
     default: 2,
     3000: 4,
@@ -45,7 +44,7 @@ const News = () => {
               type="search"
               className="form-control relative flex-auto min-w-0 inline w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Search Headlines"
-              onChange={(e) => setinp(e.target.value)}
+              onChange={(e) => setInp(e.target.value)}
               aria-label="Search"
               aria-describedby="button-addon2"
             />
