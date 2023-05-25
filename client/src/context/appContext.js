@@ -63,7 +63,7 @@ const AppProvider = ({ children }) => {
   };
 
   const authFetch = axios.create({
-    baseURL: "http://localhost:5000/",
+    baseURL: "http://34.67.156.97:5000/",
   });
 
   authFetch.interceptors.request.use(
