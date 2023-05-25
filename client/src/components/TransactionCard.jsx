@@ -24,14 +24,29 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
         <div className="flex flex-row justify-between m-auto">
           <div className="flex flex-col justify-center text-left">
             <p>Stock: {item.stockName}</p>
-            <p>Price: {item.price} &#8377;</p>
+            <p>
+              Price:{" "}
+              {Number(item.price).toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}{" "}
+              &#8377;
+            </p>
             <p>Quantity: {item.quantity}</p>
-            <p>Tax: {item.tax.toFixed(2)} &#8377;</p>
+            <p>
+              Tax:{" "}
+              {Number(item.tax).toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}{" "}
+              &#8377;
+            </p>
           </div>
           <div className="flex flex-col justify-center text-right">
             <p>
               {item.receiver === userName ? "+" : "-"}{" "}
-              {Number(item.amount).toFixed(2)} &#8377;
+              {Number(item.amount).toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}{" "}
+              &#8377;
             </p>
             <p>Date: {newTransactionTime}</p>
           </div>
@@ -52,9 +67,29 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
               )}
               {!item.isRepay && item.receiver !== userName && <p>Loan Given</p>}
 
-              <p>Pricipal: {item.principal} &#8377;</p>
-              <p>Interest: {item.interest}%</p>
-              <p>Tax: {item.isRepay ? "0" : item.tax.toFixed(2)} &#8377;</p>
+              <p>
+                Pricipal:{" "}
+                {Number(item.principal).toLocaleString("en-IN", {
+                  maximumFractionDigits: 2,
+                })}{" "}
+                &#8377;
+              </p>
+              <p>
+                Interest:{" "}
+                {item.interest.toLocaleString("en-IN", {
+                  maximumFractionDigits: 2,
+                })}
+                %
+              </p>
+              <p>
+                Tax:{" "}
+                {item.isRepay
+                  ? "0"
+                  : Number(item.tax).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                &#8377;
+              </p>
             </div>
             <div className="flex flex-col justify-center text-right">
               {item.receiver === userName ? (
@@ -65,14 +100,23 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
               {item.isRepay ? (
                 <p>
                   {item.receiver === userName ? "+" : "-"}{" "}
-                  {item.amount.toFixed(2)} &#8377;
+                  {Number(item.amount).toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  &#8377;
                 </p>
               ) : (
                 <p>
                   {item.receiver === userName ? "+" : "-"}{" "}
                   {item.receiver === userName
-                    ? (Number(item.amount) - Number(item.tax)).toFixed(2)
-                    : (Number(item.amount) + Number(item.tax)).toFixed(2)}{" "}
+                    ? (Number(item.amount) - Number(item.tax)).toLocaleString(
+                        "en-IN",
+                        { maximumFractionDigits: 2 }
+                      )
+                    : (Number(item.amount) + Number(item.tax)).toLocaleString(
+                        "en-IN",
+                        { maximumFractionDigits: 2 }
+                      )}{" "}
                   &#8377;
                 </p>
               )}
@@ -94,7 +138,11 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
             </div>
             <div className="flex flex-col justify-center text-right">
               <p>
-                {item.receiver === userName ? "+" : "-"} {item.amount} &#8377;
+                {item.receiver === userName ? "+" : "-"}{" "}
+                {Number(item.amount).toLocaleString("en-IN", {
+                  maximumFractionDigits: 2,
+                })}{" "}
+                &#8377;
               </p>
             </div>
           </div>

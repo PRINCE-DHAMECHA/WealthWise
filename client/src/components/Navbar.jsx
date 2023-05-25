@@ -46,7 +46,7 @@ const Navbar = () => {
   const name = window.localStorage.getItem("name");
   return (
     <div className="dark:bg-main-dark-bg">
-      <div className="flex justify-between p-3 md:mx-6 relative">
+      <div className="flex justify-between py-1 px-3 md:py-3 md:mx-6 relative">
         <NavButton
           cunstomFunc={() => {
             setActiveMenu((prev) => !prev);
@@ -56,7 +56,7 @@ const Navbar = () => {
         ></NavButton>
         {user ? (
           <div className="flex">
-            <div className="flex items-center flex-row gap-2 p-1 mt-2  rounded-lg">
+            <div className="flex items-center flex-row gap-2 p-1 mt-0  rounded-lg">
               <NavLink to="/portfolio" className="flex flex-row text-lg mr-1">
                 <span className="text-black dark:text-white ">
                   <AiOutlineUser size={"30px"} />
@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <div className="flex items-center flex-row gap-2 p-1 mt-2 rounded-lg">
+          <div className="flex items-center flex-row gap-2 p-1 mt-0 rounded-lg">
             <NavLink
               to="/portfolio"
               style={{
