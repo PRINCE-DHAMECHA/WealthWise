@@ -1,33 +1,10 @@
-import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { useAppContext } from "../context/appContext";
 import { Navbar, Sidebar } from "../components";
 import Info from "../components/Info";
 
 const Demo = () => {
-  const { authFetch, activeMenu } = useAppContext();
-  const [news, setNews] = useState("");
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setLoading(true);
-    const handleFetch = async () => {
-      try {
-        const { data } = await authFetch.get("/news/getNews");
-        const { resNews } = data;
-        let s = "";
-        for (let n of resNews.newsArr) {
-          s += n.title;
-          s += "     ";
-        }
-        setNews(s);
-        setLoading(false);
-      } catch (e) {
-        console.log(e);
-        setLoading(false);
-      }
-    };
-    handleFetch();
-  }, []);
+  const { activeMenu } = useAppContext();
   return (
     <>
       <div className="">

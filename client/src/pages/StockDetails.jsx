@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Header } from "../components";
 import { useAppContext } from "../context/appContext.js";
 import { useParams } from "react-router-dom";
 import RingLoader from "react-spinners/RingLoader";

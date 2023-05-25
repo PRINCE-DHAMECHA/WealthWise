@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Header, Note } from "../components";
+import { Note } from "../components";
 import { useAppContext } from "../context/appContext";
 import RingLoader from "react-spinners/RingLoader";
 import { VscAdd } from "react-icons/vsc";

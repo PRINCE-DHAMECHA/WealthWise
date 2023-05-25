@@ -30,6 +30,7 @@ const SIP = () => {
   useEffect(() => {
     setLoading(false);
     handleChange();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amount, rate, period]);
 
   const handleChange = () => {

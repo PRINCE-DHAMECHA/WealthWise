@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import { MarketViewData } from "../data/dummy";
 import { MarketViewCard, Header } from "../components";
-import { NavLink } from "react-router-dom";
-import { useAppContext } from "../context/appContext";
 const MarketView = () => {
-  const { currentColor } = useAppContext();
   const [inp, setinp] = useState("");
   return (
     <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">

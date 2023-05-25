@@ -4,9 +4,7 @@ import { useAppContext } from "../context/appContext";
 const NewsLine = () => {
   const { currentColor, authFetch } = useAppContext();
   const [news, setNews] = useState("");
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true);
     const handleFetch = async () => {
       try {
         const { data } = await authFetch.get("/news/getNews");
@@ -17,13 +15,12 @@ const NewsLine = () => {
           s += ". . . . .";
         }
         setNews(s);
-        setLoading(false);
       } catch (e) {
         console.log(e);
-        setLoading(false);
       }
     };
     handleFetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div
