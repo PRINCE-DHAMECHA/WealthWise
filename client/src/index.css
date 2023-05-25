@@ -16,7 +16,7 @@ input::-webkit-inner-spin-button {
 }
 
 .scrollClass::-webkit-scrollbar {
-  width: 1px;
+  width: 0px;
 }
 .scrollClass::-webkit-scrollbar-corner {
   background: transparent;

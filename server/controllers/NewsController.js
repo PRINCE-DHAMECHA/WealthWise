@@ -11,7 +11,15 @@ const fetchNews = async (req, res) => {
     if (dataOld.length !== 0) {
       dataOld = dataOld[0];
       let dateDB = new Date(dataOld.createDate);
-      if (dateDB.toDateString() === dateNow.toDateString()) {
+      console.log(
+        dateDB.toISOString().substring(0, 10) ===
+          dateNow.toISOString().substring(0, 10)
+      );
+      if (
+        dateDB.toISOString().substring(0, 10) ===
+        dateNow.toISOString().substring(0, 10)
+      ) {
+        console.log(1);
         res
           .status(StatusCodes.ACCEPTED)
           .json({ success: true, resNews: dataOld });
