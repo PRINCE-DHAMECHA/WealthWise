@@ -1,10 +1,7 @@
-# SmartStocks
+<h1 align="center"> SmartStocks 📈</h1>
 
-<!-- ![Banner](https://github.com/PRINCE-DHAMECHA/SmartStocks/blob/main/Banner.png) -->
-
-### Problem It Solves
-The problem this project solves is the lack of experience and confidence that new investors face when trying to invest in the stock market. By providing a simulated trading environment with dummy stocks, new investors can practice trading without risking real money. This will give them the opportunity to learn about the stock market and develop trading strategies without the fear of losing their hard-earned money. Additionally, providing information about real stocks will help new investors make informed decisions when they eventually transition to trading with real money. Ultimately, this project aims to help new investors gain confidence and experience in the stock market, reducing the barrier to entry and promoting financial literacy.
-
+## Problem It Solves
+The problem this project solves is the lack of experience and confidence that new investors face when trying to invest in the stock market. By providing a simulated trading environment with dummy stocks, new investors can practice trading without risking real money. This will give them the opportunity to learn about the stock market and develop trading strategies without the fear of losing their hard-earned money. Additionally, providing information about real stocks will help new investors make informed decisions when they eventually transition to trading with real money. Also this project provides some financial information. Site provides some financial planning tools using that one can achieve financial stability.
 
 ### Project Description
 SmartStocks is a platform designed to help new investors gain confidence and experience in the stock market. It provides a simulated trading environment where users can practice trading with dummy stocks, without the risk of losing real money. In addition, the platform offers a loan system to help users understand how loans work and how to manage them effectively.
