@@ -7,7 +7,7 @@
   "scripts": {
     "install-server": "npm install",
     "install-dependencies": " npm run install-client && npm run install-server ",
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
