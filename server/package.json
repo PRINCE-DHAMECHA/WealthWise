@@ -1,7 +1,7 @@
 {
-  "name": "smart_investment",
+  "name": "wealthwise_server",
   "version": "1.0.0",
-  "description": "smart_investment",
+  "description": "wealthwise_server",
   "type": "module",
   "main": "index.js",
   "scripts": {
