@@ -4,9 +4,9 @@
 The problem this project solves is the lack of experience and confidence that new investors face when trying to invest in the stock market. By providing a simulated trading environment with dummy stocks, new investors can practice trading without risking real money. This will give them the opportunity to learn about the stock market and develop trading strategies without the fear of losing their hard-earned money. Additionally, providing information about real stocks will help new investors make informed decisions when they eventually transition to trading with real money. Also this project provides some financial information. Site provides some financial planning tools using that one can achieve financial stability.
 
 ### Project Description
-SmartStocks is a platform designed to help new investors gain confidence and experience in the stock market. It provides a simulated trading environment where users can practice trading with dummy stocks, without the risk of losing real money. In addition, the platform offers a loan system to help users understand how loans work and how to manage them effectively.
+Wealthwise is a user-friendly platform for both stock market enthusiasts and investors in Indian and American markets. One can practice treding in this platform with virtual dummy stocks without fear of loosing real money.Also they can search real time merket data with charts.  
 
-One of the key features of SmartStocks is the real-time stock data it provides. Users can view current prices, price charts, and recommendations to help them make informed decisions about their investments. This data is updated in real-time, allowing users to stay up-to-date with market trends and make timely decisions.
+One of the key features of Wealthwise is the real-time stock data it provides. Users can view current prices, price charts, and recommendations to help them make informed decisions about their investments. This data is updated in real-time, allowing users to stay up-to-date with market trends and make timely decisions.
 
 In addition to stock market data, SmartStocks also provides recommendations to buy their dream car. This feature helps users plan for their financial goals and make informed decisions about their investments.
 
