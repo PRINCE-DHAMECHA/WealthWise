@@ -156,7 +156,11 @@ const Accounts = () => {
             <div className="flex flex-col w-full justify-center">
               <div>
                 <p className="md:text-3xl text-xl mb-2 font-medium dark:text-white m-auto shadow-sm inline p-3">
-                  Current Balance: {currentBalance} &#8377;
+                  Current Balance:{" "}
+                  {Number(currentBalance).toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  &#8377;
                 </p>
               </div>
             </div>
@@ -185,7 +189,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Credit: {stockCredit} &#8377;
+                    Credit:{" "}
+                    {Number(stockCredit).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                   <p
                     style={{
@@ -196,7 +204,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Debits: {stockDebit} &#8377;
+                    Debits:{" "}
+                    {Number(stockDebit).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                 </div>
               </div>
@@ -250,7 +262,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Credit: {loanCredit} &#8377;
+                    Credit:{" "}
+                    {Number(loanCredit).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                   <p
                     style={{
@@ -261,7 +277,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Debits: {loanDebit} &#8377;
+                    Debits:{" "}
+                    {Number(loanDebit).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                 </div>
               </div>
@@ -318,7 +338,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Total: {100 * tipCount} &#8377;
+                    Total:{" "}
+                    {Number(100 * tipCount).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                 </div>
               </div>
@@ -375,7 +399,11 @@ const Accounts = () => {
                       }}
                       className="shadow-md"
                     >
-                      Total: {taxes} &#8377;
+                      Total:{" "}
+                      {Number(taxes).toLocaleString("en-IN", {
+                        maximumFractionDigits: 2,
+                      })}{" "}
+                      &#8377;
                     </p>
                   )}
                 </div>
@@ -416,7 +444,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Credit: {allCredit} &#8377;
+                    Credit:{" "}
+                    {Number(allCredit).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                   <p
                     style={{
@@ -427,7 +459,11 @@ const Accounts = () => {
                     }}
                     className="shadow-md"
                   >
-                    Debits: {allDebit} &#8377;
+                    Debits:{" "}
+                    {Number(allDebit).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
+                    &#8377;
                   </p>
                 </div>
               </div>
