@@ -32,7 +32,7 @@ const CreateNote = () => {
     }
   };
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg rounded-3xl">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 md:mt-2 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg rounded-3xl">
       <div className="flex justify-between text-center flex-wrap flex-col">
         <Header title="Create Note" />
         {loading && (
@@ -46,7 +46,7 @@ const CreateNote = () => {
           <form
             className="mt-8 space-y-6"
             onSubmit={handleSubmit}
-            method="POST"
+            method="post"
           >
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm dark:text-white text-left">
@@ -80,7 +80,11 @@ const CreateNote = () => {
               </div>
               <div className="text-center mt-5 text-xl">
                 <p className="block m-auto">
-                  Platform Fees: {(principal * 0.005).toFixed(2)}
+                  Platform Fees:{" "}
+                  {(principal * 0.005).toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}
+                  &#8377;
                 </p>
               </div>
             </div>

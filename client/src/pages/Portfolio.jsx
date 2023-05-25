@@ -129,7 +129,7 @@ const Portfolio = () => {
     "#6FAAB0",
   ];
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title="Portfolio" />
         {loading ? (
@@ -141,9 +141,21 @@ const Portfolio = () => {
         ) : (
           <div>
             <div className="flex flex-col mb-20">
-              <div className="w-full flex xl:flex-row flex-col justify-around px-0 text-center dark:text-white font-semibold md:text-2xl text-lg  mb-10 text-black">
-                <h1 className="">Wallet : {user["balance"]} &#8377;</h1>
-                <h1>Invested : {invested} &#8377;</h1>
+              <div className="w-full flex xl:flex-row flex-col justify-around px-0 text-center dark:text-white font-semibold md:text-xl text-lg  mb-10 text-black">
+                <h1 className="">
+                  Wallet :{" "}
+                  {user["balance"].toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  &#8377;
+                </h1>
+                <h1>
+                  Invested :{" "}
+                  {Number(invested).toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  &#8377;
+                </h1>
                 <h1 className="flex justify-center text-center">
                   <button onClick={reloadFunc} className="px-1">
                     <HiOutlineRefresh color={currentColor} />
@@ -158,7 +170,9 @@ const Portfolio = () => {
                     }
                   >
                     {" "}
-                    {current}{" "}
+                    {Number(current).toLocaleString("en-IN", {
+                      maximumFractionDigits: 2,
+                    })}{" "}
                     {invested > 0 ? (
                       <span className="text-base pt-1">
                         ({((current - invested) / invested).toFixed(3)}%)
@@ -259,29 +273,6 @@ const Portfolio = () => {
                 No Transactions To Summarize
               </p>
             )}
-
-            <div className="m-10 mt-20 flex justify-center gap-8">
-              <NavLink
-                style={{
-                  backgroundColor: currentColor,
-                  borderRadius: "10px",
-                }}
-                to="/marketview"
-                className={`text-xl text-white px-6 py-2 hover:drop-shadow-xl`}
-              >
-                Trade
-              </NavLink>
-              <NavLink
-                style={{
-                  backgroundColor: currentColor,
-                  borderRadius: "10px",
-                }}
-                to="/themepicker"
-                className={`text-xl text-white px-6 py-2 hover:drop-shadow-xl `}
-              >
-                Themes
-              </NavLink>
-            </div>
           </div>
         )}
       </div>

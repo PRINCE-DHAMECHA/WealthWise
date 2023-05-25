@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Header } from "../components";
 import { useAppContext } from "../context/appContext.js";
 import RingLoader from "react-spinners/RingLoader";
-import { TiExportOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
 
 const Watchlist = () => {
@@ -21,9 +20,10 @@ const Watchlist = () => {
       }
     };
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center dark:text-white">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center dark:text-white">
       <div className="text-center w-full">
         <Header title="My Watchlist" />
         {loading ? (
@@ -34,7 +34,7 @@ const Watchlist = () => {
           </div>
         ) : (
           <div className="m-auto mb-3 w-full flex flex-col gap-10">
-            <div className="flex flex-col text-center justify-center gap-10">
+            <div className="flex flex-col text-center justify-center gap-5">
               <p
                 style={{
                   borderBottom: `2px solid ${currentColor}`,
@@ -71,7 +71,7 @@ const Watchlist = () => {
                               <Link
                                 to={`/stockDetails/${watch.exc}/${watch.name}/${watch.symbol}`}
                                 style={{ background: currentColor }}
-                                className="flex items-center md:py-2 px-4 py-2 md:px-4 text-sm text-md text-center rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-80 text-white font-light tracking-widest hover:skew-x-2 mr-0"
+                                className="flex items-center md:py-2 px-4 py-2 md:px-4 text-sm text-md text-center rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-80 text-white font-light hover:skew-x-2 mr-0"
                               >
                                 Explore
                               </Link>
@@ -82,8 +82,13 @@ const Watchlist = () => {
                     );
                   })}
               </div>
+              {!watchlist.filter((watch) => watch.exc === "NSE").length && (
+                <div>
+                  <p>No Stock Added</p>
+                </div>
+              )}
             </div>
-            <div className="flex flex-col text-center justify-center gap-10">
+            <div className="flex flex-col text-center justify-center gap-5">
               <p
                 style={{
                   borderBottom: `2px solid ${currentColor}`,
@@ -113,14 +118,14 @@ const Watchlist = () => {
                                 {watch.name}
                               </span>
                               <span className="pr-1 md:text-lg text-base  text-gray-900 dark:text-white">
-                                LTP: {watch.currentPrice} &#36;ss
+                                LTP: {watch.currentPrice} &#36;
                               </span>
                             </div>
                             <div className="w-1/3 text-right flex justify-end md:px-1 m-auto">
                               <Link
                                 to={`/stockDetails/${watch.exc}/${watch.name}/${watch.symbol}`}
                                 style={{ background: currentColor }}
-                                className="flex items-center md:py-2 px-4 py-2 md:px-4 text-sm text-md text-center rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-80 text-white font-light tracking-widest hover:skew-x-2 mr-0"
+                                className="flex items-center md:py-2 px-4 py-2 md:px-4 text-sm text-md text-center rounded-lg  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-80 text-white font-light hover:skew-x-2 mr-0"
                               >
                                 Explore
                               </Link>
@@ -131,6 +136,11 @@ const Watchlist = () => {
                     );
                   })}
               </div>
+              {!watchlist.filter((watch) => watch.exc === "NYSE").length && (
+                <div>
+                  <p>No Stock Added</p>
+                </div>
+              )}
             </div>
           </div>
         )}

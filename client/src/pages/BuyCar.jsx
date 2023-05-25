@@ -42,7 +42,7 @@ const BuyCar = () => {
     handleChange();
   }, [price, interest]);
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title={"Buy A Car ( 20-10-4 : Rule )"} />
         {loading ? (
@@ -110,16 +110,37 @@ const BuyCar = () => {
               {!err && (
                 <p>
                   Your salary need to be minimum{" "}
-                  <b>{err ? "NA" : (emi * 10).toFixed(2)}</b> &#8377;
+                  <b>
+                    {err
+                      ? "NA"
+                      : Number(emi * 10).toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        })}
+                  </b>{" "}
+                  &#8377;
                 </p>
               )}
               {!err && (
                 <p>
-                  Down Payment: {err ? "NA" : (Number(price) / 5).toFixed(2)}
+                  Down Payment:{" "}
+                  {err
+                    ? "NA"
+                    : (Number(price) / 5).toLocaleString("en-IN", {
+                        maximumFractionDigits: 2,
+                      })}
+                  &#8377;
                 </p>
               )}
               {!err && (
-                <p>EMI will be: {err ? "NA" : Number(emi).toFixed(2)}&#8377;</p>
+                <p>
+                  EMI will be:{" "}
+                  {err
+                    ? "NA"
+                    : Number(emi).toLocaleString("en-IN", {
+                        maximumFractionDigits: 2,
+                      })}
+                  &#8377;
+                </p>
               )}
               {!err && <p>Loan tenure: {err ? "NA" : 4} Years</p>}
               {err && (

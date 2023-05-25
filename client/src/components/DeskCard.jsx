@@ -45,19 +45,34 @@ const DeskCard = ({ data, isBorrow }) => {
       >
         <div className="flex flex-row text-center justify-around  dark:text-white font-medium md:text-lg text-base tracking-wide">
           <div className="text-left sm:w-4/5">
-            <p>Outstanding: {outstanding}</p>
+            <p>
+              Outstanding:{" "}
+              {Number(outstanding).toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}
+              &#8377;
+            </p>
             <p>
               {!isBorrow ? "Borrower" : "Lender"}:{" "}
               {isBorrow ? data.lender : data.borrower}
             </p>
-            <div>Principal: {data.principal}rs</div>
-            <div>Interest: {data.interest}%</div>
+            <div>
+              Principal:{" "}
+              {Number(data.principal).toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}
+              &#8377;
+            </div>
+            <div>
+              Interest:{" "}
+              {Number(data.interest).toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}
+              %
+            </div>
             <div>
               Date: {zeroPad(day, 2)}/{zeroPad(month, 2)}/{year}
             </div>
-            {isBorrow && -Number(outstanding) + Number(user.balance) > 0 && (
-              <div>Suggestion: Repay</div>
-            )}
           </div>
           <div className="my-auto text-left">
             {isBorrow && (

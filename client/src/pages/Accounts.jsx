@@ -42,12 +42,12 @@ const Accounts = () => {
       }
       const { data } = await authFetch.get("account/getTransaction");
       setMyTransactios(data);
-      let allCredits = { action: "all", color: "#7ced65" };
-      let allDebits = { action: "all", color: "#fc4e41" };
-      let loanCredits = { action: "loan", color: "#7ced65" };
-      let loanDebits = { action: "loan", color: "#fc4e41" };
-      let shareCredits = { action: "share", color: "#7ced65" };
-      let shareDebits = { action: "share", color: "#fc4e41" };
+      let allCredits = { action: "all", color: "#47D773" };
+      let allDebits = { action: "all", color: "#F87171" };
+      let loanCredits = { action: "loan", color: "#47D773" };
+      let loanDebits = { action: "loan", color: "#F87171" };
+      let shareCredits = { action: "share", color: "#47D773" };
+      let shareDebits = { action: "share", color: "#F87171" };
       let allCreditAmount = 0,
         allDebitAmount = 0,
         shareCreditsAmount = 0,
@@ -142,7 +142,7 @@ const Accounts = () => {
     chartInstance.exportModule.export("PNG", "Transaction Summary");
   }
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
+    <div className="m-2 md:m-10 mb-10 md:mt-2 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
       <div className="flex justify-between flex-wrap text-center">
         <Header title="Accounts" />
         {loading ? (

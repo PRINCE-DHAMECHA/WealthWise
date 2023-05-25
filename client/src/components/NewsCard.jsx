@@ -1,27 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppContext } from "../context/appContext";
+import { BiLinkExternal, MdExpand } from "react-icons/bi";
 
 const NewsCard = ({ news }) => {
   const { currentColor } = useAppContext();
+  const [isHover, setisHover] = useState(false);
   return (
     <div
       style={{
         borderLeft: `2px solid ${currentColor}`,
         borderRadius: "10px",
       }}
-      className="flex flex-col dark:text-white m-5 p-3 shadow-md dark:shadow-gray-600 max-h-52 overflow-scroll gap-4 scrollClass"
+      className="flex flex-col gap-4 dark:text-white m-5 my-10 p-3 py-5 shadow-md dark:shadow-gray-600 text-left relative"
+      onMouseEnter={() => setisHover(true)}
+      onMouseLeave={() => setisHover(false)}
     >
-      <div
-        style={{
-          color: currentColor,
-        }}
-        className="text-left"
+      {isHover && (
+        <a
+          className="md:absolute md:block hidden  top-3 right-3"
+          href={news.link}
+          target="_blank"
+        >
+          <BiLinkExternal />
+        </a>
+      )}
+      <a
+        className="md:hidden block absolute top-2 right-2"
+        href={news.link}
+        target="_blank"
       >
-        <p className="text-base">{news.title}</p>
-      </div>
-      <div className="text-left">
-        <p className="text-sm">{news.description}</p>
-      </div>
+        <BiLinkExternal />
+      </a>
+      <p
+        style={{
+          borderBottom: isHover ? `1px solid ${currentColor}` : "0px",
+          borderRadius: "5px",
+        }}
+        className="text-base p-2"
+      >
+        {news.title}
+      </p>
+      <p className={`text-sm ${isHover ? "" : "hidden"} p-2`}>
+        {news.description}
+      </p>
     </div>
   );
 };

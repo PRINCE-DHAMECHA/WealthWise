@@ -1,5 +1,5 @@
-import logoLight from "../utils/img/logoLight.png";
-import logoDark from "../utils/img/logoDark.png";
+import logoLight from "../utils/img/newLogoLight.png";
+import logoDark from "../utils/img/newLogoDark.png";
 import { useAppContext } from "../context/appContext";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -73,7 +73,7 @@ export default function Register() {
     }
   };
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2  p-2 md:p-6 text-center  dark:bg-secondary-dark-bg bg-white rounded-3xl">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2  p-2 md:p-6 text-center  dark:bg-secondary-dark-bg bg-white rounded-3xl">
       {loading ? (
         <div className="w-full p-20">
           <div className="m-auto w-7">
@@ -86,7 +86,7 @@ export default function Register() {
             <img
               src={currentMode === "Dark" ? logoDark : logoLight}
               alt="Logo"
-              className="m-auto mt-3 w-2/3 md:w-3/12 h-auto"
+              className="m-auto mt-3 w-2/5 md:w-2/12 h-auto"
             ></img>
           </Link>
           <div className="max-w-sm w-full space-y-6">
@@ -120,7 +120,7 @@ export default function Register() {
                       className={
                         "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 dark:bg-[#3d4249] dark:text-white focus:z-10 sm:text-md dark:placeholder-white dark:border-slate-500 dark:focus:border-gray-300"
                       }
-                      placeholder="Name"
+                      placeholder="Username"
                     />
                   </div>
                 )}

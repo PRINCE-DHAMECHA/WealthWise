@@ -77,7 +77,7 @@ const priceChart = async (req, res) => {
         d.setUTCSeconds(time[i]);
         let temp = {};
         temp.date = d;
-        temp.price = price[i].toFixed(2);
+        temp.price = price[i]?.toFixed(2);
         arr.push(temp);
       }
       obj.monthPrice = arr;
@@ -97,7 +97,7 @@ const priceChart = async (req, res) => {
         d.setUTCSeconds(time[i]);
         let temp = {};
         temp.date = d;
-        temp.price = price[i].toFixed(2);
+        temp.price = price[i]?.toFixed(2);
         arr.push(temp);
       }
       obj.weekPrice = arr;
@@ -117,7 +117,7 @@ const priceChart = async (req, res) => {
         d.setUTCSeconds(time[i]);
         let temp = {};
         temp.date = d;
-        temp.price = price[i].toFixed(2);
+        temp.price = price[i]?.toFixed(2);
         arr.push(temp);
       }
       obj.dayPrice = arr;

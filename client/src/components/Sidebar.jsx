@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { RiCloseFill } from "react-icons/ri";
 import { links } from "../data/dummy";
 import { useAppContext } from "../context/appContext";
-import logoDark from "../utils/img/logoDark.png";
-import logo from "../utils/img/logoLight.png";
+import logoDark from "../utils/img/newLogoDark.png";
+import logo from "../utils/img/newLogoLight.png";
 
 const Sidebar = () => {
   const { activeMenu, setActiveMenu, screenSize, currentColor, currentMode } =
@@ -22,11 +22,11 @@ const Sidebar = () => {
     <div className="dark:bg-secondary-dark-bg p-2 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto">
       {activeMenu && (
         <>
-          <div className="flex mt-4 justify-between items-center z-50">
-            <div className="h-2/3 w-2/3 -ml-8">
+          <div className="flex mt-1 ml-2 justify-between items-center z-50 w-36">
+            <div className="h-1/6 w-auto">
               <Link to="/landing">
                 <img
-                  className="mx-auto h-auto w-auto"
+                  className="mx-auto h-auto w-auto "
                   src={currentMode === "Dark" ? logoDark : logo}
                   alt="Workflow"
                 />
@@ -36,7 +36,7 @@ const Sidebar = () => {
               type="button"
               onClick={() => setActiveMenu((prev) => !prev)}
               style={{ color: currentColor }}
-              className={`  text-xl rounded-full p-3  block `}
+              className={`top-0 right-0 absolute  text-xl rounded-full p-3  block `}
             >
               <RiCloseFill size={"25px"}></RiCloseFill>
             </button>

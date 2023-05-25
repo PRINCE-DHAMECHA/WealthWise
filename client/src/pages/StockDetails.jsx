@@ -271,7 +271,7 @@ const StockDetails = () => {
     chartInstance.exportModule.export("PNG", `${params.name}`);
   }
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full relative">
         <div className="mb-10 mt-5 w-full text-center">
           <p
@@ -319,7 +319,7 @@ const StockDetails = () => {
           <div className="flex flex-wrap">
             <div
               style={{ borderColor: currentColor, borderRadius: "10px" }}
-              className="flex flex-col gap-2 dark:text-white m-auto md:text-left p-4 font-semibold text-base md:text-xl border-l-2"
+              className="flex flex-col gap-2 dark:text-white m-auto md:text-left p-4 font-semibold text-base md:text-xl border-l-2 shadow-md dark:shadow-gray-600"
             >
               <p>
                 Current Price: {about.currentPrice ? about?.currentPrice : "NA"}{" "}
@@ -446,7 +446,7 @@ const StockDetails = () => {
                       xName="x"
                       yName="y"
                       width="3"
-                      marker={{ visible: true, width: 8, height: 8 }}
+                      marker={{ visible: true, width: 5, height: 5 }}
                       type="MultiColoredLine"
                       pointColorMapping="color"
                     />

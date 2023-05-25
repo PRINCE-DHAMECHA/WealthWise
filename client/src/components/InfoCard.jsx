@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/appContext";
 import { MdNavigateNext } from "react-icons/md";
-import { useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { InformationData } from "../data/dummy";
 
-const InfoCard = ({}) => {
+const InfoCard = () => {
   const { currentColor } = useAppContext();
   const [details, setDetails] = useState("");
   const [title, setTitle] = useState("");
-
+  const [reload, setReload] = useState(false);
   let r = parseInt(currentColor.substring(1, 3), 16);
   let g = parseInt(currentColor.substring(3, 5), 16);
   let b = parseInt(currentColor.substring(5, 7), 16);
@@ -21,15 +21,19 @@ const InfoCard = ({}) => {
   const currentRoute = location.pathname.replace("/", "");
 
   const handleButtonClick = () => {
-    const infoFetched = InformationData.find(
-      (obj) => obj.routeName === currentRoute
+    let infoFetched = InformationData.find((obj) =>
+      obj.routeName.includes(currentRoute.split("/")[0])
     );
-    const rand = Math.floor(Math.random() * 15);
-    const newDetails = infoFetched.contents[rand];
-    setDetails(newDetails);
-    setTitle(infoFetched.title);
+    if (!infoFetched) {
+      infoFetched = InformationData.find((obj) =>
+        obj.routeName.includes("landing")
+      );
+    }
+    const randInt = Math.floor(Math.random() * infoFetched.contents.length);
+    const newDetails = infoFetched.contents[randInt];
+    setDetails(newDetails.content);
+    setTitle(newDetails.title);
   };
-
   useEffect(() => {
     handleButtonClick();
   }, []);

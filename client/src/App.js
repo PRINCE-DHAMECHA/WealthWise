@@ -21,6 +21,7 @@ import LoanCalc from "./pages/LoanCalc";
 import SIP from "./pages/SIP";
 import Watchlist from "./pages/Watchlist";
 import News from "./pages/News";
+import NewsLine from "./components/NewsLine";
 function App() {
   const { currentMode } = useAppContext();
   return (
@@ -77,6 +78,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      <NewsLine />
     </div>
   );
 }

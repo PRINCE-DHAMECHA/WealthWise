@@ -42,7 +42,7 @@ const LoanDesk = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title="Loan Desk" />
         {loading && (
@@ -54,20 +54,30 @@ const LoanDesk = () => {
         )}
         {!loading && (
           <div>
-            <div className="flex dark:text-white flex-col justify-around flex-wrap xl:flex-row font-semibold md:text-2xl text-lg">
+            <div className="flex dark:text-white flex-col justify-around flex-wrap xl:flex-row font-semibold md:text-xl text-lg">
               <p className="w-64 block m-auto py-0.5">
-                Balance: {user.balance} &#8377;
+                Wallet:{" "}
+                {user.balance.toLocaleString("en-IN", {
+                  maximumFractionDigits: 2,
+                })}{" "}
+                &#8377;
               </p>
               <p className="w-60 block m-auto py-0.5">
                 Givings:{" "}
-                <span style={{ color: "#00ff11" }}>
-                  {user.givings.toFixed(2)} &#8377;
+                <span style={{ color: "#00b700" }}>
+                  {user.givings.toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  &#8377;
                 </span>
               </p>
               <p className="w-60 block m-auto py-0.5">
                 Debt:{" "}
-                <span style={{ color: "#ff0d00" }}>
-                  {user.borrowings.toFixed(2)} &#8377;
+                <span style={{ color: "#fc4e41" }}>
+                  {user.borrowings.toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}{" "}
+                  &#8377;
                 </span>
               </p>
             </div>
@@ -80,7 +90,7 @@ const LoanDesk = () => {
                     background: !isBorrow ? currentColor : "",
                     color: !isBorrow ? "white" : "",
                   }}
-                  className="p-2 px-7 lg:text-xl mb-5 rounded-md dark:text-white"
+                  className="p-2 px-7 lg:text-xl mb-5 rounded-md dark:text-white shadow-md dark:shadow-gray-600"
                 >
                   My Givings
                 </button>
@@ -91,7 +101,7 @@ const LoanDesk = () => {
                     background: isBorrow ? currentColor : "",
                     color: isBorrow ? "white" : "",
                   }}
-                  className="p-2 px-7 lg:text-xl mb-5 rounded-md dark:text-white"
+                  className="p-2 px-7 lg:text-xl mb-5 rounded-md dark:text-white shadow-md dark:shadow-gray-600"
                 >
                   My Borrowings
                 </button>

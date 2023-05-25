@@ -32,8 +32,20 @@ const Note = ({ note, handleFunc }) => {
                 <div>
                   <p>Lender: {note.lender}</p>
                 </div>
-                <div>Amount: {note.principal}rs</div>
-                <div>Interest: {note.interest}%</div>
+                <div>
+                  Amount:{" "}
+                  {Number(note.principal).toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}
+                  &#8377;
+                </div>
+                <div>
+                  Interest:{" "}
+                  {Number(note.interest).toLocaleString("en-IN", {
+                    maximumFractionDigits: 2,
+                  })}
+                  %
+                </div>
               </div>
               <div className="m-auto">
                 <div className="m-auto">

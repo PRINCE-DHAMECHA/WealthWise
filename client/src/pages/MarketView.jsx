@@ -7,7 +7,7 @@ const MarketView = () => {
   const { currentColor } = useAppContext();
   const [inp, setinp] = useState("");
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
       <div className="flex justify-between flex-wrap">
         <Header title="Market" />
         <div className="m-auto mb-3 w-full xl:w-96">
@@ -33,28 +33,6 @@ const MarketView = () => {
             </div>
           );
         })}
-      </div>
-      <div className="m-10 text-center flex justify-center gap-8">
-        <NavLink
-          style={{
-            backgroundColor: currentColor,
-            borderRadius: "10px",
-          }}
-          to="/portfolio"
-          className={`text-xl text-white px-6 py-2 hover:drop-shadow-xl `}
-        >
-          Portfolio
-        </NavLink>
-        <NavLink
-          style={{
-            backgroundColor: currentColor,
-            borderRadius: "10px",
-          }}
-          to="/themepicker"
-          className={`text-xl text-white px-6 py-2 hover:drop-shadow-xl `}
-        >
-          Themes
-        </NavLink>
       </div>
     </div>
   );

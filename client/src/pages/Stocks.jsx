@@ -11,7 +11,7 @@ const Stocks = () => {
   const { currentColor, user } = useAppContext();
   console.log(user);
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full relative">
         <Header title="Search" />
         <div className="md:hidden justify-between text-center font-normal mb-5">
@@ -40,7 +40,7 @@ const Stocks = () => {
           </div>
         </div>
         <input
-          className="text-14 md:text-lg h-16 shadow-md appearance-none border-none border-gray-200 rounded-2xl w-full md:w-2/3 md:p-4 p-2 dark:text-white z-10 leading-tight focus:outline-none dark:placeholder-white  focus:border-none dark:bg-[#3d4249]  focus:bg-white"
+          className="text-14 md:text-lg h-16 shadow-md appearance-none border-none border-gray-200 rounded-2xl w-full md:w-2/3 md:p-4 p-2 dark:text-white z-10 leading-tight focus:outline-none dark:placeholder-white  focus:border-none dark:bg-[#3d4249]  focus:bg-white mb-5"
           value={inp}
           placeholder={`Search ${isIndian ? "Indian" : "USA"} Stocks Here...`}
           onChange={(e) => {

@@ -222,12 +222,18 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                         color: TotalchangeInPrice >= 0 ? "#7ced65" : "#fc4e41",
                       }}
                     >
-                      LTP: {ltp} &#8377;
+                      LTP:{" "}
+                      {ltp.toLocaleString("en-IN", {
+                        maximumFractionDigits: 2,
+                      })}{" "}
+                      &#8377;
                     </p>
                     <p className="text-sm my-auto">
                       {TotalchangeInPrice >= 0 ? "+" : ""}
-                      {TotalchangeInPrice} ({" "}
-                      {TotalchangeInPrice >= 0 ? "+" : ""}
+                      {TotalchangeInPrice.toLocaleString("en-IN", {
+                        maximumFractionDigits: 2,
+                      })}{" "}
+                      ( {TotalchangeInPrice >= 0 ? "+" : ""}
                       {PerChangeInPrice}% )
                     </p>
                   </div>
@@ -248,7 +254,12 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     {isAction === "Buy" ? (
                       <p className="text-left w-2/3 m-auto block">
                         Brokerage :{" "}
-                        {Math.min((ltp * Quantity * 0.0003).toFixed(2), 20)}
+                        {Math.min(
+                          (ltp * Quantity * 0.0003).toLocaleString("en-IN", {
+                            maximumFractionDigits: 2,
+                          }),
+                          20
+                        )}
                         &#8377;
                       </p>
                     ) : (
@@ -289,12 +300,22 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     {isAction === "Buy" ? (
                       <p className="text-left w-2/3 m-auto block">
                         Total:{" "}
-                        {(ltp * Quantity * 0.0003 + ltp * Quantity).toFixed(2)}
+                        {(
+                          ltp * Quantity * 0.0003 +
+                          ltp * Quantity
+                        ).toLocaleString("en-IN", { maximumFractionDigits: 2 })}
                         &#8377;
                       </p>
                     ) : (
                       <p className="text-left w-2/3 m-auto block">
-                        Total: {(-15.93 + ltp * Quantity).toFixed(2)}&#8377;
+                        Total:{" "}
+                        {Math.max(-15.93 + ltp * Quantity, 0).toLocaleString(
+                          "en-IN",
+                          {
+                            maximumFractionDigits: 2,
+                          }
+                        )}
+                        &#8377;
                       </p>
                     )}
                     <button
@@ -343,10 +364,24 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                   {!loading1 && showMyShare && !isDisplay && (
                     <div className="flex flex-col gap-6">
                       <p className="flex flex-col gap-6">
-                        Current Balance: {currentBalance} &#8377;
+                        Current Balance:{" "}
+                        {currentBalance.toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        })}{" "}
+                        &#8377;
                       </p>
-                      <p>Quantity: {myShare.quantity}</p>
-                      <p>Avg: {myShare?.price?.toFixed(2)}</p>
+                      <p>
+                        Quantity:{" "}
+                        {myShare.quantity.toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        })}
+                      </p>
+                      <p>
+                        Avg:{" "}
+                        {myShare?.price?.toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        })}
+                      </p>
                       <p>Buy Date: {buyDate}</p>
                     </div>
                   )}
@@ -355,7 +390,11 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     <div className="flex flex-col gap-6">
                       {!isDisplay && !loading1 && (
                         <p className="flex flex-col gap-6">
-                          Current Balance: {currentBalance} &#8377;
+                          Current Balance:{" "}
+                          {currentBalance.toLocaleString("en-IN", {
+                            maximumFractionDigits: 2,
+                          })}{" "}
+                          &#8377;
                         </p>
                       )}
                       <p>Quantity: 0</p>

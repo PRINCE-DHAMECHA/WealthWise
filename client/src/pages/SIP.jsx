@@ -63,8 +63,8 @@ const SIP = () => {
     chartInstance.exportModule.export("PNG", "SIP Calculator");
   }
   const palettes = [
-    "#fc4e41",
-    "#00b700",
+    "#F87171",
+    "#47D773",
     "#E4BF58",
     "#4174C9",
     "#3C9D4E",
@@ -77,7 +77,7 @@ const SIP = () => {
   ];
 
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title={"SIP Calculator"} />
         {loading ? (
@@ -158,25 +158,32 @@ const SIP = () => {
                     {" "}
                     {err
                       ? "NA"
-                      : wealthGained.toLocaleString("en-IN", {
+                      : Number(wealthGained).toLocaleString("en-IN", {
                           maximumFractionDigits: 2,
-                        })}{" "}
+                        })}
+                    &#8377;{" "}
                   </span>{" "}
                 </p>
                 <p>
                   Invested :
                   <span className="font-medium text-red-400">
                     {" "}
-                    {err ? "NA" : invested.toLocaleString("en-IN")}
+                    {err
+                      ? "NA"
+                      : Number(invested).toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        })}
+                    &#8377;
                   </span>
                 </p>
                 <p>
                   Total wealth :{" "}
                   {err
                     ? "NA"
-                    : totalWealth.toLocaleString("en-IN", {
+                    : Number(totalWealth).toLocaleString("en-IN", {
                         maximumFractionDigits: 2,
                       })}
+                  &#8377;
                 </p>
               </div>
             </div>

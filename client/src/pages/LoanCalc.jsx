@@ -35,8 +35,8 @@ const LoanCalc = () => {
     x: index + 1,
     principalPaid: entry.principalPaid,
     interestPaid: entry.interestPaid,
-    principalAxisColor: "#00b700",
-    interestAxisColor: "#fc4e41",
+    principalAxisColor: "#47D773",
+    interestAxisColor: "#F87171",
   }));
 
   useEffect(() => {
@@ -136,7 +136,7 @@ const LoanCalc = () => {
   }
 
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title={"Loan Calculator"} />
         {loading ? (
@@ -221,14 +221,35 @@ const LoanCalc = () => {
                 }}
                 className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
-                <p> Principal Amount : {err ? "NA" : amount} &#8377; </p>
+                <p>
+                  {" "}
+                  Principal Amount :{" "}
+                  {err
+                    ? "NA"
+                    : Number(amount).toLocaleString("en-IN", {
+                        maximumFractionDigits: 2,
+                      })}{" "}
+                  &#8377;{" "}
+                </p>
                 <p>
                   {" "}
                   Interest Paid :{" "}
                   <span className="text-red-400">
-                    {err ? "NA" : (emi * loanTerm * 12).toFixed(2)} &#8377;{" "}
-                    {err ? "" : " ( "}
-                    {err ? "" : ((emi * loanTerm * 12) / amount).toFixed(2)}
+                    {err
+                      ? "NA"
+                      : Number(emi * loanTerm * 12 - amount).toLocaleString(
+                          "en-IN",
+                          {
+                            maximumFractionDigits: 2,
+                          }
+                        )}{" "}
+                    &#8377; {err ? "" : " ( "}
+                    {err
+                      ? ""
+                      : Number((emi * loanTerm * 12) / amount).toLocaleString(
+                          "en-IN",
+                          { maximumFractionDigits: 2 }
+                        )}
                     {err ? "" : "x )"}
                   </span>
                 </p>

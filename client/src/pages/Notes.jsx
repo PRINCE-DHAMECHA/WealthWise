@@ -45,7 +45,7 @@ const Notes = () => {
     setforRender((prev) => !prev);
   };
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full relative">
         <div className="mb-10 mt-5 w-full text-center">
           <p
@@ -70,17 +70,6 @@ const Notes = () => {
           </div>
         ) : (
           <div>
-            {/* <div className="flex justify-center gap-5 mt-10 mb-5">
-              <button
-                onClick={() => {
-                  setisMyNotes(!isMyNotes);
-                }}
-                style={{ background: currentColor }}
-                className="flex gap-2 p-2 px-7 text-xl mb-5 rounded-md text-white"
-              >
-                {isMyNotes ? "All Notes" : "My Notes"}
-              </button>
-            </div> */}
             <div className="justify-between text-center font-normal flex">
               <div className="flex gap-4 justify-around dark:text-white text-left m-auto mb-6">
                 <div className="flex flex-col h-12 items-center justify-center overflow-hidden">
