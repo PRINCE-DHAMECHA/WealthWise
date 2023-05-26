@@ -248,32 +248,32 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                   ></input>
                 </div>
 
-                <div className="flex flex-row justify-around">
-                  {isAction === "Buy" ? (
-                    <p className="text-left w-2/3 m-auto block">
-                      Brokerage :{" "}
-                      {Quantity * ltp < 100000
-                        ? Math.max(
-                            Math.min(
-                              (ltp * Quantity * 0.0003).toLocaleString(
-                                "en-IN",
-                                {
-                                  maximumFractionDigits: 2,
-                                }
+                <div className="flex flex-row justify-start">
+                  <div className="my-auto text-left w-2/4">
+                    {isAction === "Buy" ? (
+                      <p className="m-auto block">
+                        Brokerage :{" "}
+                        {Quantity * ltp < 100000
+                          ? Math.max(
+                              Math.min(
+                                (ltp * Quantity * 0.0003).toLocaleString(
+                                  "en-IN",
+                                  {
+                                    maximumFractionDigits: 2,
+                                  }
+                                ),
+                                20
                               ),
-                              20
-                            ),
-                            0
-                          )
-                        : 20}
-                      &#8377;
-                    </p>
-                  ) : (
-                    <p className="text-left w-2/3 m-auto block">
-                      DP Charges : 15.93&#8377;
-                    </p>
-                  )}
-                  <div className="flex justify-between w-1/3 text-left font-normal">
+                              0
+                            )
+                          : 20}
+                        &#8377;
+                      </p>
+                    ) : (
+                      <p className="m-auto block">DP Charges : 15.93&#8377;</p>
+                    )}
+                  </div>
+                  <div className="flex justify-between w-2/12 font-normal text-center m-auto">
                     <div className="flex gap-4 justify-around dark:text-white text-left m-auto">
                       <div className="flex flex-col h-12 items-center justify-center overflow-hidden">
                         <div className="flex">

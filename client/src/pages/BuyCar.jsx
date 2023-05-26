@@ -61,7 +61,7 @@ const BuyCar = () => {
           >
             <div className="flex flex-row">
               <p className="lg:w-1/2 w-full m-auto dark:text-white">
-                Price Of Car{" "}
+                Price Of Car:{" "}
               </p>
               <div className="w-full">
                 <input
@@ -76,7 +76,7 @@ const BuyCar = () => {
               </div>
             </div>
             <div className="flex flex-row">
-              <p className="lg:w-1/2 w-full m-auto">Interest </p>
+              <p className="lg:w-1/2 w-full m-auto">Interest: </p>
               <div className="w-full">
                 <input
                   value={interest}
