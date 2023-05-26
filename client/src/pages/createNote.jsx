@@ -79,14 +79,14 @@ const CreateNote = () => {
               <div className="text-center mt-5 text-xl">
                 <p className="block m-auto">
                   Platform Fees:{" "}
-                  {principal < 1000000
+                  {principal < 100000
                     ? Math.max(
                         (principal * 0.005).toLocaleString("en-IN", {
                           maximumFractionDigits: 2,
                         }),
                         0
                       )
-                    : 1000}
+                    : 500}
                   &#8377;
                 </p>
               </div>
