@@ -55,7 +55,7 @@ const Tips = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title="Tips" />
         {loading ? (
@@ -96,7 +96,7 @@ const Tips = () => {
                 </button>
               </div>
             ) : (
-              <div className="dark:text-white">
+              <div className="dark:text-white md:mb-6">
                 <p className="text-2xl font-medium">Tip Bought!!</p>
                 <div
                   style={{
@@ -105,7 +105,7 @@ const Tips = () => {
                   }}
                   className="flex lg:w-5/12 lg:m-auto lg:mt-6 mx-5 my-4 p-3 text-lg font-normal flex-col gap-2 mt-5 shadow-md dark:shadow-gray-600"
                 >
-                  <p style={{ color: "#7ced65" }}>
+                  <p style={{ color: "#00b700" }}>
                     Buy {MarketViewData[currentBuy.stockIndex].stockName}{" "}
                   </p>
                   <p>current price: {currentBuy["currentPrice"]} &#8377;</p>

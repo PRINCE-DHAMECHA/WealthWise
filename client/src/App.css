@@ -53,6 +53,20 @@
 .scrollClass::-webkit-scrollbar-thumb {
   background-color: #ffffff;
 }
+.scrollClass2::-webkit-scrollbar {
+  display: none;
+}
+.scrollClass2::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.scrollClass2::-webkit-scrollbar-track {
+  box-shadow: transparent;
+}
+
+.scrollClass2::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+}
 
 .myScroll {
   overflow: scroll;

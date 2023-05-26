@@ -11,7 +11,7 @@ const TransactionCard = ({ item, userName, isStockTransaction }) => {
   let newTransactionTime = `${buyDay}/${BuyMonth}/${BuyYear}`;
   return (
     <div
-      className="lg:w-2/5 w-full m-2 py-3 px-4 dark:text-white lg:text-lg shadow-md hover:shadow-lg dark:bg-[#3d4249]"
+      className="lg:w-2/5 w-full my-2 mx-1 py-3 px-4 text-xs dark:text-white lg:text-lg shadow-md hover:shadow-lg dark:bg-[#3d4249]"
       style={{
         borderLeft:
           item.receiver === userName

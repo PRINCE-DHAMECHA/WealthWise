@@ -49,7 +49,7 @@ const LoanCalc = () => {
     setLoading(true);
     if (
       amount <= 0 ||
-      amount >= 100000000 ||
+      amount >= 1000000000 ||
       rate <= 0 ||
       rate > 100 ||
       (loanTermUnit === "years" && (loanTerm >= 100 || loanTerm <= 0)) ||
@@ -137,7 +137,7 @@ const LoanCalc = () => {
   }
 
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title={"Loan Calculator"} />
         {loading ? (
@@ -224,7 +224,7 @@ const LoanCalc = () => {
               >
                 <p>
                   {" "}
-                  Principal Amount :{" "}
+                  Principal :{" "}
                   {err
                     ? "NA"
                     : Number(amount).toLocaleString("en-IN", {
@@ -232,18 +232,16 @@ const LoanCalc = () => {
                       })}{" "}
                   &#8377;{" "}
                 </p>
+                <p>EMI : {err ? "NA" : emi} &#8377; </p>
                 <p>
                   {" "}
-                  Interest Paid :{" "}
+                  Repayment :{" "}
                   <span className="text-red-400">
                     {err
                       ? "NA"
-                      : Number(emi * loanTerm * 12 - amount).toLocaleString(
-                          "en-IN",
-                          {
-                            maximumFractionDigits: 2,
-                          }
-                        )}{" "}
+                      : Number(emi * loanTerm * 12).toLocaleString("en-IN", {
+                          maximumFractionDigits: 2,
+                        })}{" "}
                     &#8377; {err ? "" : " ( "}
                     {err
                       ? ""
@@ -254,7 +252,21 @@ const LoanCalc = () => {
                     {err ? "" : "x )"}
                   </span>
                 </p>
-                <p>EMI : {err ? "NA" : emi} &#8377; </p>
+                <p>
+                  {" "}
+                  Interest :{" "}
+                  <span className="text-red-400">
+                    {err
+                      ? "NA"
+                      : Number(emi * loanTerm * 12 - amount).toLocaleString(
+                          "en-IN",
+                          {
+                            maximumFractionDigits: 2,
+                          }
+                        )}{" "}
+                    &#8377;
+                  </span>
+                </p>
               </div>
             </div>
 
@@ -419,18 +431,22 @@ const LoanCalc = () => {
                   {viewOption === "yearly"
                     ? yearlyReport.map((data) => (
                         <div
-                          className="shadow-md rounded-xl flex py-3"
+                          className="shadow-md rounded-xl flex gap-3 py-3"
                           style={{ borderLeft: `2px solid ${currentColor}` }}
                           key={data.year}
                         >
-                          <p className="text-center w-1/4">{data.year}</p>
-                          <p className="text-center w-1/4">
+                          <p className="text-center w-1/4 overflow-scroll scrollClass2">
+                            {data.year}
+                          </p>
+                          <p className="text-center w-1/4 overflow-scroll scrollClass2">
                             {data.principalPaid}
                           </p>
-                          <p className="text-center w-1/4">
+                          <p className="text-center w-1/4 overflow-scroll scrollClass2">
                             {data.interestPaid}
                           </p>
-                          <p className="text-center w-1/4">{data.balance}</p>
+                          <p className="text-center w-1/4 overflow-scroll scrollClass2">
+                            {data.balance}
+                          </p>
                         </div>
                       ))
                     : monthlyReport.map((data) => (

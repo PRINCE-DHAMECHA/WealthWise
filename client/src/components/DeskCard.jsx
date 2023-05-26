@@ -27,12 +27,12 @@ const DeskCard = ({ data, isBorrow }) => {
   return (
     <div className="rounded-lg m-2">
       <div
-        className="rounded-lg border dark:bg-[#3d4249] border-gray-100 cursor-pointer shadow-md dark:border-gray-700  h-auto p-5"
+        className="rounded-lg border dark:bg-[#3d4249] border-gray-100 cursor-pointer shadow-md dark:border-gray-700 h-auto p-5"
         style={{
           borderLeft: `3px solid ${currentColor}`,
         }}
       >
-        <div className="flex flex-row text-center justify-around  dark:text-white font-medium md:text-lg text-base tracking-wide">
+        <div className="flex flex-row text-center justify-start gap-6 dark:text-white font-medium md:text-lg text-sm tracking-wide">
           <div className="text-left sm:w-4/5">
             <p>
               Outstanding:{" "}

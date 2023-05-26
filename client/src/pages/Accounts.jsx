@@ -142,7 +142,7 @@ const Accounts = () => {
     chartInstance.exportModule.export("PNG", "Transaction Summary");
   }
   return (
-    <div className="m-2 md:m-10 mb-10 md:mt-2 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
+    <div className="m-2 mb-16 md:mt-2 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
       <div className="flex justify-between flex-wrap text-center">
         <Header title="Accounts" />
         {loading ? (
@@ -155,7 +155,13 @@ const Accounts = () => {
           <div className="flex flex-col w-full justify-center text-center gap-14">
             <div className="flex flex-col w-full justify-center">
               <div>
-                <p className="md:text-3xl text-xl mb-2 font-medium dark:text-white m-auto shadow-sm inline p-3">
+                <p
+                  style={{
+                    borderLeft: `2px solid ${currentColor}`,
+                    borderRadius: "10px",
+                  }}
+                  className="md:text-xl text-lg mb-2 font-medium dark:text-white m-auto inline p-3 shadow-lg dark:shadow-gray-600"
+                >
                   Current Balance:{" "}
                   {Number(currentBalance).toLocaleString("en-IN", {
                     maximumFractionDigits: 2,
@@ -175,11 +181,11 @@ const Accounts = () => {
               <div className="flex justify-center flex-col">
                 <p
                   style={{ borderBottom: `2px solid ${currentColor}` }}
-                  className="inline text-3xl p-2 mb-5 font-medium dark:text-white m-auto"
+                  className="inline text-xl md:text-2xl p-2 mb-5 font-medium dark:text-white m-auto"
                 >
                   Stock Transactions
                 </p>
-                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-xl font-medium">
+                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-lg md:text-xl font-medium">
                   <p
                     style={{
                       borderBottom: `2px solid #7ced65`,
@@ -248,11 +254,11 @@ const Accounts = () => {
               <div className="flex justify-center flex-col">
                 <p
                   style={{ borderBottom: `2px solid ${currentColor}` }}
-                  className="inline p-2 text-3xl mb-5 font-medium dark:text-white m-auto"
+                  className="inline p-2 text-xl md:text-2xl mb-5 font-medium dark:text-white m-auto"
                 >
                   Loan Transactions
                 </p>
-                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-xl font-medium">
+                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-lg md:text-xl font-medium">
                   <p
                     style={{
                       borderBottom: `2px solid #7ced65`,
@@ -324,11 +330,11 @@ const Accounts = () => {
               <div className="flex justify-center flex-col">
                 <p
                   style={{ borderBottom: `2px solid ${currentColor}` }}
-                  className="inline p-2 text-3xl mb-5 font-medium dark:text-white m-auto"
+                  className="inline p-2 text-xl md:text-2xl mb-5 font-medium dark:text-white m-auto"
                 >
                   Tips Transactions
                 </p>
-                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-xl font-medium">
+                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-lg md:text-xl font-medium">
                   <p
                     style={{
                       borderBottom: `2px solid #fc4e41`,
@@ -349,7 +355,7 @@ const Accounts = () => {
               {tipCount === 0 ? (
                 <div>
                   <p className="text-xl mt-3 dark:text-white m-auto">
-                    WhooHoo You Never Buy A Tip!!
+                    WooHoo You Never Buy A Tip!!
                   </p>
                 </div>
               ) : (
@@ -380,11 +386,11 @@ const Accounts = () => {
               <div className="flex justify-center flex-col">
                 <p
                   style={{ borderBottom: `2px solid ${currentColor}` }}
-                  className="inline p-2 text-3xl mb-5 font-medium dark:text-white m-auto"
+                  className="inline p-2 text-xl md:text-2xl mb-5 font-medium dark:text-white m-auto"
                 >
                   Tax Paid
                 </p>
-                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-xl">
+                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3 my-6 dark:text-white text-lg md:text-xl">
                   {taxes === 0 ? (
                     <p className="text-xl mt-3 dark:text-white m-auto">
                       You Didn't Pay Any Taxes !!
@@ -420,7 +426,7 @@ const Accounts = () => {
               <div className="text-center w-full">
                 <p
                   style={{ borderBottom: `2px solid ${currentColor}` }}
-                  className="inline p-2 text-3xl mb-5 font-medium dark:text-white m-auto"
+                  className="inline p-2 text-xl md:text-2xl mb-5 font-medium dark:text-white m-auto"
                 >
                   Summary
                   <button
@@ -434,7 +440,7 @@ const Accounts = () => {
                     />
                   </button>
                 </p>
-                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3  mt-10 dark:text-white text-xl font-medium">
+                <div className="flex lg:flex-row flex-col gap-3 justify-around m-3  mt-10 dark:text-white text-lg md:text-xl font-medium">
                   <p
                     style={{
                       borderBottom: `2px solid #7ced65`,

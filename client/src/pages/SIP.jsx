@@ -78,7 +78,7 @@ const SIP = () => {
   ];
 
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
       <div className="text-center w-full">
         <Header title={"SIP Calculator"} />
         {loading ? (
@@ -95,13 +95,13 @@ const SIP = () => {
                   borderLeft: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
+                className="flex flex-col justify-center text-left text-sm lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
                 <div className="flex flex-row">
                   <p className="xl:w-1/2 w-full m-auto dark:text-white">
                     Monthly SIP Amount :{" "}
                   </p>
-                  <div className="w-full xl:w-1/2">
+                  <div className="w-full xl:w-1/2 m-auto">
                     <input
                       value={amount}
                       onChange={(e) => {
@@ -117,7 +117,7 @@ const SIP = () => {
                   <p className="xl:w-1/2 w-full m-auto dark:text-white">
                     Investment Period (years) :{" "}
                   </p>
-                  <div className="w-full xl:w-1/2">
+                  <div className="w-full xl:w-1/2 m-auto">
                     <input
                       value={period}
                       onChange={(e) => {
@@ -133,7 +133,7 @@ const SIP = () => {
                   <p className="xl:w-1/2 w-full m-auto dark:text-white">
                     Expected Return Rate (p.a.) :{" "}
                   </p>
-                  <div className="w-full xl:w-1/2">
+                  <div className="w-full xl:w-1/2 m-auto">
                     <input
                       value={rate}
                       onChange={(e) => {
@@ -151,7 +151,7 @@ const SIP = () => {
                   borderLeft: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
+                className="flex flex-col justify-center text-left text-sm lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
                 <p>
                   Return Earned :{" "}

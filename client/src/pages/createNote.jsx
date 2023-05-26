@@ -30,7 +30,7 @@ const CreateNote = () => {
     }
   };
   return (
-    <div className="m-2 md:m-10 mb-10 mt-24 md:mx-9 md:mt-2 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg rounded-3xl">
+    <div className="m-2 mt-24 mb-16 md:mt-2 md:mx-9 mx-2 p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
       <div className="flex justify-between text-center flex-wrap flex-col">
         <Header title="Create Note" />
         {loading && (
@@ -40,14 +40,20 @@ const CreateNote = () => {
             </div>
           </div>
         )}
-        <div className="max-w-sm -mt-7 w-full space-y-8 m-auto">
+        <div
+          style={{
+            borderLeft: `2px solid ${currentColor}`,
+            borderRadius: "10px",
+          }}
+          className="max-w-sm w-full space-y-8 m-auto shadow-lg dark:shadow-gray-600s px-8 mt-4"
+        >
           <form
             className="mt-8 space-y-6"
             onSubmit={handleSubmit}
             method="post"
           >
             <input type="hidden" name="remember" defaultValue="true" />
-            <div className="rounded-md shadow-sm dark:text-white text-left">
+            <div className="rounded-md dark:text-white text-left">
               <div className="mb-10 mt-10">
                 <p className="pb-5 text-lg">Enter Principal</p>
                 <input
@@ -93,7 +99,7 @@ const CreateNote = () => {
             </div>
 
             <div className="text-center">
-              <div className="flex justify-center gap-5 mt-10 mb-5">
+              <div className="flex justify-center gap-5 mt-5 mb-5">
                 <button
                   type="submit"
                   onSubmit={handleSubmit}
@@ -105,19 +111,6 @@ const CreateNote = () => {
                 >
                   Create
                 </button>
-                <Link to="/notes">
-                  <button
-                    type="submit"
-                    onSubmit={handleSubmit}
-                    style={{
-                      backgroundColor: currentColor,
-                      borderRadius: "10px",
-                    }}
-                    className={`text-md text-white p-3 hover:drop-shadow-xl `}
-                  >
-                    Back
-                  </button>
-                </Link>
               </div>
               {err && <p className="text-red-500">{"Something Went Wrong"}</p>}
             </div>
