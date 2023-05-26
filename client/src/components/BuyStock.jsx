@@ -249,7 +249,7 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                 </div>
 
                 <div className="flex flex-row justify-start">
-                  <div className="my-auto text-left w-2/4">
+                  <div className="my-auto text-left w-2/3">
                     {isAction === "Buy" ? (
                       <p className="m-auto block">
                         Brokerage :{" "}
@@ -273,7 +273,7 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                       <p className="m-auto block">DP Charges : 15.93&#8377;</p>
                     )}
                   </div>
-                  <div className="flex justify-between w-2/12 font-normal text-center m-auto">
+                  <div className="flex justify-center w-1/3 font-normal text-center m-auto">
                     <div className="flex gap-4 justify-around dark:text-white text-left m-auto">
                       <div className="flex flex-col h-12 items-center justify-center overflow-hidden">
                         <div className="flex">
