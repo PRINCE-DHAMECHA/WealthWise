@@ -24,7 +24,7 @@ const reducer = (state, action) => {
       ...state,
       showAlert: true,
       alertType: "red",
-      alertText: "Password Should Be More Than 4 Letters",
+      alertText: "Password Must Be at least 6 Characters Long",
     };
   }
   if (action.type === CLEAR_ALERT) {

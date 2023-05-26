@@ -53,7 +53,7 @@ export default function Register() {
       displayAlert();
       return;
     }
-    if (password.length <= 4) {
+    if (password.length <= 5) {
       displayPassAlert();
       return;
     }

@@ -8,6 +8,9 @@ const register = async (req, res) => {
   if (!name || !email || !password) {
     throw new UnAuthenticatedError("Provide Valid Values");
   }
+  if (password.length <= 5) {
+    throw new BadRequestError("Password Must Be at least 6 Characters Long");
+  }
   const userAlreadyExists = await User.findOne({ email });
   if (userAlreadyExists) {
     throw new UnAuthenticatedError("Email Already Exist");
