@@ -254,14 +254,17 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                       <p className="text-left w-2/3 m-auto block">
                         Brokerage :{" "}
                         {Quantity * ltp < 100000
-                          ? Math.min(
-                              (ltp * Quantity * 0.0003).toLocaleString(
-                                "en-IN",
-                                {
-                                  maximumFractionDigits: 2,
-                                }
+                          ? Math.max(
+                              Math.min(
+                                (ltp * Quantity * 0.0003).toLocaleString(
+                                  "en-IN",
+                                  {
+                                    maximumFractionDigits: 2,
+                                  }
+                                ),
+                                20
                               ),
-                              20
+                              0
                             )
                           : 20}
                         &#8377;
@@ -304,9 +307,9 @@ const BuyStock = ({ activeStockName, activeStockId }) => {
                     {isAction === "Buy" ? (
                       <p className="text-left w-2/3 m-auto block">
                         Total:{" "}
-                        {(
-                          ltp * Quantity * 0.0003 +
-                          ltp * Quantity
+                        {Math.max(
+                          ltp * Quantity * 0.0003 + ltp * Quantity,
+                          0
                         ).toLocaleString("en-IN", { maximumFractionDigits: 2 })}
                         &#8377;
                       </p>
