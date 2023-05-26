@@ -45,7 +45,7 @@ const Notes = () => {
     setforRender((prev) => !prev);
   };
   return (
-    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div>
       <div className="text-center w-full relative">
         <div className="mb-10 mt-5 w-full text-center">
           <p

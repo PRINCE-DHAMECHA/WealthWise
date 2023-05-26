@@ -73,7 +73,7 @@
 }
 
 .myScroll::-webkit-scrollbar {
-  width: 4px;
+  width: 1px;
 }
 
 .myScroll::-webkit-scrollbar-corner {

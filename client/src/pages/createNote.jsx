@@ -30,7 +30,7 @@ const CreateNote = () => {
     }
   };
   return (
-    <div className="m-2 mt-24 mb-16 md:mt-2 md:mx-9 mx-2 p-2 md:p-6  dark:bg-secondary-dark-bg bg-white rounded-3xl">
+    <div>
       <div className="flex justify-between text-center flex-wrap flex-col">
         <Header title="Create Note" />
         {loading && (

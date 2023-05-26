@@ -126,153 +126,151 @@ const Portfolio = () => {
     "#6FAAB0",
   ];
   return (
-    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
-      <div className="text-center w-full">
-        <Header title="Portfolio" />
-        {loading ? (
-          <div className="w-full p-20">
-            <div className="m-auto w-7">
-              <RingLoader color={currentColor} className="-ml-5" />
-            </div>
+    <div className="text-center w-full">
+      <Header title="Portfolio" />
+      {loading ? (
+        <div className="w-full p-20">
+          <div className="m-auto w-7">
+            <RingLoader color={currentColor} className="-ml-5" />
           </div>
-        ) : (
-          <div>
-            <div className="flex flex-col mb-20">
-              <div className="w-full flex xl:flex-row flex-col justify-around px-0 text-center dark:text-white font-semibold md:text-xl text-lg  mb-10 text-black">
-                <h1 className="">
-                  Wallet :{" "}
-                  {user["balance"].toLocaleString("en-IN", {
+        </div>
+      ) : (
+        <div>
+          <div className="flex flex-col mb-20">
+            <div className="w-full flex xl:flex-row flex-col justify-around px-0 text-center dark:text-white font-semibold md:text-xl text-lg  mb-10 text-black">
+              <h1 className="">
+                Wallet :{" "}
+                {user["balance"].toLocaleString("en-IN", {
+                  maximumFractionDigits: 2,
+                })}{" "}
+                &#8377;
+              </h1>
+              <h1>
+                Invested :{" "}
+                {Number(invested).toLocaleString("en-IN", {
+                  maximumFractionDigits: 2,
+                })}{" "}
+                &#8377;
+              </h1>
+              <h1 className="flex justify-center text-center">
+                <button onClick={reloadFunc} className="px-1">
+                  <HiOutlineRefresh color={currentColor} />
+                </button>
+                Current :
+                <p
+                  className="ml-1 flex justify-center text-center"
+                  style={
+                    invested - current <= 0
+                      ? { color: "#00b700" }
+                      : { color: "#fc4e41" }
+                  }
+                >
+                  {" "}
+                  {Number(current).toLocaleString("en-IN", {
                     maximumFractionDigits: 2,
                   })}{" "}
-                  &#8377;
-                </h1>
-                <h1>
-                  Invested :{" "}
-                  {Number(invested).toLocaleString("en-IN", {
-                    maximumFractionDigits: 2,
-                  })}{" "}
-                  &#8377;
-                </h1>
-                <h1 className="flex justify-center text-center">
-                  <button onClick={reloadFunc} className="px-1">
-                    <HiOutlineRefresh color={currentColor} />
-                  </button>
-                  Current :
-                  <p
-                    className="ml-1 flex justify-center text-center"
-                    style={
-                      invested - current <= 0
-                        ? { color: "#00b700" }
-                        : { color: "#fc4e41" }
-                    }
-                  >
-                    {" "}
-                    {Number(current).toLocaleString("en-IN", {
-                      maximumFractionDigits: 2,
-                    })}{" "}
-                    {invested > 0 ? (
-                      <span className="text-base pt-1">
-                        ({((current - invested) / invested).toFixed(3)}%)
-                      </span>
-                    ) : (
-                      ""
-                    )}
-                    {invested - current <= 0 ? (
-                      <AiOutlineArrowUp
-                        className="inline -mt-1"
-                        style={{ color: "#00b700", fontSize: "20px" }}
-                      />
-                    ) : (
-                      <AiOutlineArrowDown
-                        style={{
-                          color: "#ff0d00",
-                          marginTop: "12px",
-                          fontSize: "20px",
-                        }}
-                      />
-                    )}
-                  </p>
-                </h1>
-              </div>
-              <div className="flex flex-wrap justify-center items-center gap-10 mx-1">
-                {Portfolioshare.map((item) => {
-                  return (
-                    <div style={{ width: "32rem" }} key={item.index}>
-                      <PortfolioCard
-                        stockname={item.name}
-                        k={item.index}
-                        quantity={item.quantity}
-                        buyPrice={item.buyPrice}
-                        buyTime={item.buyTime}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <Header title="Analysis" />
-            {Portfolioshare.length !== 0 ? (
-              <div className="flex flex-col justify-center text-center">
-                <div className="flex flex-col justify-center text-center">
-                  <AccumulationChartComponent
-                    id="charts"
-                    legendSettings={{
-                      visible: true,
-                      toggleVisibility: false,
-                      textStyle: {
-                        color: currentMode === "Dark" ? "white" : "black",
-                      },
-                      alignment: "Center",
-                      position: "Bottom",
-                    }}
-                    tooltip={{ enable: true }}
-                    ref={(chart) => (chartInstance = chart)}
-                    background="none"
-                  >
-                    <Inject
-                      services={[
-                        AccumulationLegend,
-                        AccumulationTooltip,
-                        AccumulationDataLabel,
-                        Export,
-                      ]}
+                  {invested > 0 ? (
+                    <span className="text-base pt-1">
+                      ({((current - invested) / invested).toFixed(3)}%)
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                  {invested - current <= 0 ? (
+                    <AiOutlineArrowUp
+                      className="inline -mt-1"
+                      style={{ color: "#00b700", fontSize: "20px" }}
                     />
-                    <AccumulationSeriesCollectionDirective>
-                      <AccumulationSeriesDirective
-                        dataSource={dataChart}
-                        xName="x"
-                        yName="y"
-                        radius="90%"
-                        palettes={palettes}
-                        dataLabel={{
-                          position: "Inside",
-                          visible: true,
-                          name: "text",
-                        }}
-                      />
-                    </AccumulationSeriesCollectionDirective>
-                  </AccumulationChartComponent>
-                  <button
-                    value="print"
-                    style={{
-                      backgroundColor: currentColor,
-                      borderRadius: "10px",
-                    }}
-                    onClick={clickHandler.bind(this)}
-                    className="w-28 m-auto text-xl text-white px-6 py-2 hover:drop-shadow-xl hover:skew-x-2"
-                  >
-                    Export
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <p className="dark:text-white text-lg font-medium">
-                No Transactions To Summarize
-              </p>
-            )}
+                  ) : (
+                    <AiOutlineArrowDown
+                      style={{
+                        color: "#ff0d00",
+                        marginTop: "12px",
+                        fontSize: "20px",
+                      }}
+                    />
+                  )}
+                </p>
+              </h1>
+            </div>
+            <div className="flex flex-wrap justify-center items-center gap-10 mx-1">
+              {Portfolioshare.map((item) => {
+                return (
+                  <div style={{ width: "32rem" }} key={item.index}>
+                    <PortfolioCard
+                      stockname={item.name}
+                      k={item.index}
+                      quantity={item.quantity}
+                      buyPrice={item.buyPrice}
+                      buyTime={item.buyTime}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        )}
-      </div>
+          <Header title="Analysis" />
+          {Portfolioshare.length !== 0 ? (
+            <div className="flex flex-col justify-center text-center">
+              <div className="flex flex-col justify-center text-center">
+                <AccumulationChartComponent
+                  id="charts"
+                  legendSettings={{
+                    visible: true,
+                    toggleVisibility: false,
+                    textStyle: {
+                      color: currentMode === "Dark" ? "white" : "black",
+                    },
+                    alignment: "Center",
+                    position: "Bottom",
+                  }}
+                  tooltip={{ enable: true }}
+                  ref={(chart) => (chartInstance = chart)}
+                  background="none"
+                >
+                  <Inject
+                    services={[
+                      AccumulationLegend,
+                      AccumulationTooltip,
+                      AccumulationDataLabel,
+                      Export,
+                    ]}
+                  />
+                  <AccumulationSeriesCollectionDirective>
+                    <AccumulationSeriesDirective
+                      dataSource={dataChart}
+                      xName="x"
+                      yName="y"
+                      radius="90%"
+                      palettes={palettes}
+                      dataLabel={{
+                        position: "Inside",
+                        visible: true,
+                        name: "text",
+                      }}
+                    />
+                  </AccumulationSeriesCollectionDirective>
+                </AccumulationChartComponent>
+                <button
+                  value="print"
+                  style={{
+                    backgroundColor: currentColor,
+                    borderRadius: "10px",
+                  }}
+                  onClick={clickHandler.bind(this)}
+                  className="w-28 m-auto text-xl text-white px-6 py-2 hover:drop-shadow-xl hover:skew-x-2"
+                >
+                  Export
+                </button>
+              </div>
+            </div>
+          ) : (
+            <p className="dark:text-white text-lg font-medium">
+              No Transactions To Summarize
+            </p>
+          )}
+        </div>
+      )}
     </div>
   );
 };

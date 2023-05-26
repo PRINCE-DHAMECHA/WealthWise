@@ -10,7 +10,7 @@ import { Fader } from "../components";
 const Landing = () => {
   const { currentColor, currentMode } = useAppContext();
   return (
-    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2  p-2 md:p-6  dark:bg-secondary-dark-bg rounded-3xl">
+    <div>
       <div className="flex justify-between text-center flex-wrap flex-col">
         <img
           src={currentMode === "Dark" ? logoDark : logo}

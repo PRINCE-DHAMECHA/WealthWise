@@ -55,34 +55,63 @@ const Tips = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
-      <div className="text-center w-full">
-        <Header title="Tips" />
-        {loading ? (
-          <div className="w-full mb-5">
-            <div className="m-auto w-7">
-              <RingLoader color={currentColor} className="-ml-5" />
-            </div>
+    <div className="text-center w-full">
+      <Header title="Tips" />
+      {loading ? (
+        <div className="w-full mb-5">
+          <div className="m-auto w-7">
+            <RingLoader color={currentColor} className="-ml-5" />
           </div>
-        ) : (
-          <div
-            style={{
-              borderLeft: `2px solid ${currentColor}`,
-              borderRadius: "10px",
-            }}
-            className="p-4 flex flex-col justify-center dark:text-white gap-5 shadow-md dark:shadow-gray-600"
-          >
-            <p className="text-lg lg:text-2xl font-medium">
-              Current Balance:{" "}
-              {Number(currentBalance).toLocaleString("en-IN", {
-                maximumFractionDigits: 2,
-              })}
-              &#8377;
-            </p>
-            {!isTipBought ? (
-              <div>
-                <p className="text-lg lg:text-2xl dark:text-white font-medium m-5">
-                  Buy Tip At Just 100&#8377;
+        </div>
+      ) : (
+        <div
+          style={{
+            borderLeft: `2px solid ${currentColor}`,
+            borderRadius: "10px",
+          }}
+          className="p-4 flex flex-col justify-center dark:text-white gap-5 shadow-md dark:shadow-gray-600"
+        >
+          <p className="text-lg lg:text-2xl font-medium">
+            Current Balance:{" "}
+            {Number(currentBalance).toLocaleString("en-IN", {
+              maximumFractionDigits: 2,
+            })}
+            &#8377;
+          </p>
+          {!isTipBought ? (
+            <div>
+              <p className="text-lg lg:text-2xl dark:text-white font-medium m-5">
+                Buy Tip At Just 100&#8377;
+              </p>
+              <button
+                style={{
+                  backgroundColor: currentColor,
+                  borderRadius: "10px",
+                }}
+                onClick={handlePay}
+                className="w-28 m-auto text-lg text-white mt-6 px-4 py-2 hover:drop-shadow-xl hover:skew-x-2"
+              >
+                {myText}
+              </button>
+            </div>
+          ) : (
+            <div className="dark:text-white md:mb-6">
+              <p className="text-2xl font-medium">Tip Bought!!</p>
+              <div
+                style={{
+                  borderLeft: `2px solid ${currentColor}`,
+                  borderRadius: "10px",
+                }}
+                className="flex lg:w-5/12 lg:m-auto lg:mt-6 mx-5 my-4 p-3 text-lg font-normal flex-col gap-2 mt-5 shadow-md dark:shadow-gray-600"
+              >
+                <p style={{ color: "#00b700" }}>
+                  Buy {MarketViewData[currentBuy.stockIndex].stockName}{" "}
+                </p>
+                <p>current price: {currentBuy["currentPrice"]} &#8377;</p>
+                <p>Target high: {currentBuy["maxPrice"]} &#8377;</p>
+                <p>
+                  Possible Gain: {(currentBuy["possibleGain"] * 100).toFixed(2)}
+                  %
                 </p>
                 <button
                   style={{
@@ -90,46 +119,15 @@ const Tips = () => {
                     borderRadius: "10px",
                   }}
                   onClick={handlePay}
-                  className="w-28 m-auto text-lg text-white mt-6 px-4 py-2 hover:drop-shadow-xl hover:skew-x-2"
+                  className="w-36 m-auto text-lg text-white mt-2 px-4 py-2 hover:drop-shadow-xl hover:skew-x-2"
                 >
                   {myText}
                 </button>
               </div>
-            ) : (
-              <div className="dark:text-white md:mb-6">
-                <p className="text-2xl font-medium">Tip Bought!!</p>
-                <div
-                  style={{
-                    borderLeft: `2px solid ${currentColor}`,
-                    borderRadius: "10px",
-                  }}
-                  className="flex lg:w-5/12 lg:m-auto lg:mt-6 mx-5 my-4 p-3 text-lg font-normal flex-col gap-2 mt-5 shadow-md dark:shadow-gray-600"
-                >
-                  <p style={{ color: "#00b700" }}>
-                    Buy {MarketViewData[currentBuy.stockIndex].stockName}{" "}
-                  </p>
-                  <p>current price: {currentBuy["currentPrice"]} &#8377;</p>
-                  <p>Target high: {currentBuy["maxPrice"]} &#8377;</p>
-                  <p>
-                    Possible Gain:{" "}
-                    {(currentBuy["possibleGain"] * 100).toFixed(2)}%
-                  </p>
-                  <button
-                    style={{
-                      backgroundColor: currentColor,
-                      borderRadius: "10px",
-                    }}
-                    onClick={handlePay}
-                    className="w-36 m-auto text-lg text-white mt-2 px-4 py-2 hover:drop-shadow-xl hover:skew-x-2"
-                  >
-                    {myText}
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };

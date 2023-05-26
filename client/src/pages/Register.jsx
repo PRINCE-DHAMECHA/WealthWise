@@ -73,7 +73,7 @@ export default function Register() {
     }
   };
   return (
-    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2  p-2 md:p-6 text-center  dark:bg-secondary-dark-bg bg-white rounded-3xl">
+    <div>
       {loading ? (
         <div className="w-full p-20">
           <div className="m-auto w-7">

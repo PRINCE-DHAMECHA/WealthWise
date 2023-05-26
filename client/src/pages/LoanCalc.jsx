@@ -53,7 +53,7 @@ const LoanCalc = () => {
       rate <= 0 ||
       rate > 100 ||
       (loanTermUnit === "years" && (loanTerm >= 100 || loanTerm <= 0)) ||
-      (loanTermUnit === "months" && (loanTerm >= 1200 || loanTerm <= 0))
+      (loanTermUnit === "months" && (loanTerm >= 1200 || loanTerm <= 11))
     ) {
       setErr(true);
       setLoading(false);
@@ -133,11 +133,14 @@ const LoanCalc = () => {
 
   let chartInstance;
   function clickHandler(e) {
-    chartInstance.exportModule.export("PNG", "Loan Analysis");
+    chartInstance.exportModule.export(
+      "PNG",
+      `Loan__principal=${amount}_period=${loanTerm}${loanTermUnit}_rate=${rate}_EMI=${emi}`
+    );
   }
 
   return (
-    <div className="m-2 mb-16 mt-24 md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center">
+    <div>
       <div className="text-center w-full">
         <Header title={"Loan Calculator"} />
         {loading ? (
@@ -154,7 +157,7 @@ const LoanCalc = () => {
                   borderLeft: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
+                className="flex flex-col justify-center text-left text-sm lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
                 <div className="flex flex-row">
                   <p className="w-1/3 m-auto dark:text-white">Amount: </p>
@@ -220,7 +223,7 @@ const LoanCalc = () => {
                   borderLeft: `2px solid ${currentColor}`,
                   borderRadius: "10px",
                 }}
-                className="flex flex-col justify-center text-left text-base lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
+                className="flex flex-col justify-center text-left text-sm lg:text-lg dark:text-white gap-6 p-6 shadow-md dark:shadow-gray-600"
               >
                 <p>
                   {" "}
@@ -275,7 +278,7 @@ const LoanCalc = () => {
                 borderLeft: `2px solid ${currentColor}`,
                 borderRadius: "10px",
               }}
-              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-base lg:text-lg dark:text-white gap-9 p-6 shadow-md dark:shadow-gray-600"
+              className="flex flex-col justify-center text-center lg:w-1/2 lg:text-left text-sm lg:text-lg dark:text-white gap-9 py-6 md:px-4 px-2 shadow-md dark:shadow-gray-600"
             >
               {err ? (
                 <div className="m-auto text-red-500">
@@ -313,6 +316,7 @@ const LoanCalc = () => {
                     ref={(chart) => (chartInstance = chart)}
                     background="none"
                     height="350rem"
+                    margin={"auto"}
                   >
                     <Inject
                       services={[
@@ -384,7 +388,7 @@ const LoanCalc = () => {
           {err ? (
             "NA"
           ) : (
-            <div className="flex flex-col justify-center text-center lg:text-left text-base lg:text-lg dark:text-white gap-6 lg:p-6">
+            <div className="flex flex-col justify-center text-center lg:text-left text-xs lg:text-lg dark:text-white gap-6 lg:p-6">
               {/* Toggle button */}
               <div className="flex flex-row justify-center gap-3">
                 <label className="radio-label">
@@ -416,7 +420,7 @@ const LoanCalc = () => {
                     borderBottom: `2px solid ${currentColor}`,
                   }}
                 >
-                  <p className="text-center w-1/4 text-2xl">
+                  <p className="text-center w-1/4">
                     {viewOption === "yearly" ? "Year" : "Month"}
                   </p>
                   <p className="text-center w-1/4">Principal Paid</p>

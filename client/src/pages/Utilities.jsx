@@ -26,7 +26,11 @@ const Demo = () => {
             <div className="fixed md:static bg-main-bg  navbar w-full">
               <Navbar />
             </div>
-            <Outlet />
+            <div className="m-2 my-[76px] md:mt-2 md:mx-9 mx-2 p-2 md:p-6 dark:bg-secondary-dark-bg bg-white rounded-3xl text-center dark:text-white">
+              <div className="text-center w-full p-2">
+                <Outlet />
+              </div>
+            </div>
           </div>
         </div>
         <Info />
