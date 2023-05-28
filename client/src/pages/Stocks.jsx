@@ -97,7 +97,7 @@ const Stocks = () => {
                               : `${l["name"].substring(0, 25)}...`}
                           </h1>
                           <h1 className="hidden lg:block font-light">
-                            NSE:{l["symbol"]}
+                            {isIndian ? "NSE" : "NYSE"}:{l["symbol"]}
                           </h1>
                         </div>
                       </Link>
